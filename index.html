@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Education Program | Mission for Sustainable Advancement (MSA)</title>
-<meta name="description" content="MSA's Education Program — Establishing schools, supporting teacher trainings, promoting girl child education and eradicating illiteracy in South Sudan.">
-<link rel="canonical" href="https://msasouthsudan.org/education.html">
-<meta property="og:title" content="Education Program | Mission for Sustainable Advancement (MSA)">
-<meta property="og:description" content="Building a literate South Sudan — one school, one girl, one teacher at a time.">
+<title>Mission for Sustainable Advancement (MSA) | South Sudan 🇸🇸</title>
+<meta name="description" content="Mission for Sustainable Advancement (MSA) — Empowering communities and Local Governments in South Sudan through Education, Health, Resilience and Recovery, Governance, Protection and Media programmes for a sustainable future.">
+<link rel="canonical" href="https://msasouthsudan.org/">
+<meta property="og:title" content="Mission for Sustainable Advancement (MSA) | South Sudan">
+<meta property="og:description" content="MSA envisions literate, healthy and well informed communities in South Sudan.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#078930">
 <link rel="icon" href="/favicon.ico">
@@ -35,390 +35,143 @@ tailwind.config = {
 }
 </script>
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   1. BASE
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════ BASE ═══════════════ */
 html { scroll-behavior: smooth; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
 section[id] { scroll-margin-top: 6rem; }
 
-/* ═══════════════════════════════════════════════════════════════
-   2. ANIMATIONS
-   ═══════════════════════════════════════════════════════════════ */
-@keyframes fadeInUp    { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-@keyframes fadeInLeft  { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
-@keyframes fadeInRight { from{opacity:0;transform:translateX(30px)}  to{opacity:1;transform:translateX(0)} }
-@keyframes scaleIn     { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
-@keyframes float       { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+/* ═══════════════ HERO ═══════════════ */
+.hero-image-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,51,160,.5) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(7,137,48,.4) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 20% 60%, rgba(218,41,28,.22) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 60% 40%, rgba(255,209,0,.15) 0%, transparent 50%),
+    linear-gradient(135deg,#0a0a1a 0%,#0d1b3d 25%,#0a2a1a 50%,#1a0a0a 75%,#0a0a1a 100%);
+  overflow:hidden;
+}
+.hero-image-bg::before {
+  content:''; position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.02) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-image-bg::after {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 100% 80% at 50% 100%, rgba(0,0,0,.65) 0%, transparent 70%);
+}
+.hero-overlay-photo {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  opacity:.18; mix-blend-mode:luminosity;
+}
+
+.orb { position:absolute; border-radius:50%; filter: blur(80px); animation: orbFloat 20s ease-in-out infinite; }
 @keyframes orbFloat {
   0%,100% { transform: translate(0,0) scale(1); }
-  25%     { transform: translate(30px,-40px) scale(1.1); }
-  50%     { transform: translate(-20px,20px) scale(.95); }
-  75%     { transform: translate(40px,30px) scale(1.05); }
+  25% { transform: translate(30px,-40px) scale(1.1); }
+  50% { transform: translate(-20px,20px) scale(.95); }
+  75% { transform: translate(40px,30px) scale(1.05); }
 }
 
-.animate-fadeInUp    { animation: fadeInUp .8s ease forwards; }
-.animate-fadeInLeft  { animation: fadeInLeft .8s ease forwards; }
-.animate-fadeInRight { animation: fadeInRight .8s ease forwards; }
-.animate-scaleIn     { animation: scaleIn .6s ease forwards; }
-.animate-float       { animation: float 6s ease-in-out infinite; }
+/* ═══════════════ ANIMATIONS ═══════════════ */
+@keyframes fadeInUp   { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInLeft { from{opacity:0;transform:translateX(-30px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeInRight{ from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+@keyframes scaleIn    { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
+@keyframes float      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+
+.animate-fadeInUp   { animation: fadeInUp .8s ease forwards; }
+.animate-fadeInLeft { animation: fadeInLeft .8s ease forwards; }
+.animate-fadeInRight{ animation: fadeInRight .8s ease forwards; }
+.animate-scaleIn    { animation: scaleIn .6s ease forwards; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
 .hidden-anim { opacity: 0; }
 
-/* ═══════════════════════════════════════════════════════════════
-   3. SPLIT HERO
-   ═══════════════════════════════════════════════════════════════ */
-.split-hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  background: #0a0a1a;
-}
-@media (min-width: 1024px) {
-  .split-hero {
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-  }
-}
+/* ═══════════════ COMPONENTS ═══════════════ */
+.card-modern { transition: all .4s cubic-bezier(.4,0,.2,1); border:1px solid rgba(0,0,0,.06); }
+.card-modern:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,.15); border-color: rgba(7,137,48,.25); }
 
-/* ── LEFT — photo half ── */
-.hero-photo-half {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  isolation: isolate;
-}
-@media (min-width: 640px) {
-  .hero-photo-half { aspect-ratio: 16 / 10; }
-}
-@media (min-width: 1024px) {
-  .hero-photo-half {
-    aspect-ratio: auto;
-    min-height: 100vh;
-  }
-}
+.text-gradient-green { background: linear-gradient(135deg,#078930,#0033A0); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.text-gradient-gold  { background: linear-gradient(135deg,#FFD100,#DA291C); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 
-.hero-photo-half img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-  display: block;
-}
+.btn-primary { background: linear-gradient(135deg,#078930,#055e1f); color:#fff; transition: all .3s ease; position:relative; overflow:hidden; }
+.btn-primary::before { content:''; position:absolute; inset:0; background: linear-gradient(135deg,#055e1f,#078930); opacity:0; transition: opacity .3s ease; }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(7,137,48,.35); }
+.btn-primary span, .btn-primary i { position:relative; z-index:1; }
 
-.hero-photo-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    linear-gradient(to right, rgba(10,10,26,.10) 0%, rgba(10,10,26,.30) 55%, rgba(10,10,26,.92) 100%),
-    linear-gradient(to top,   rgba(10,10,26,.80) 0%, transparent 55%);
-}
-@media (max-width: 1023px) {
-  .hero-photo-overlay {
-    background:
-      linear-gradient(to bottom, rgba(10,10,26,.10) 0%, rgba(10,10,26,.35) 55%, rgba(10,10,26,.90) 100%);
-  }
-}
+.btn-outline { border:2px solid rgba(255,255,255,.3); color:#fff; transition: all .3s ease; }
+.btn-outline:hover { background: rgba(255,255,255,.1); border-color:#FFD100; color:#FFD100; }
 
-.hero-photo-caption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  z-index: 3;
-  padding: 1.5rem;
-}
-@media (min-width: 640px)  { .hero-photo-caption { padding: 2rem; } }
-@media (min-width: 1024px) { .hero-photo-caption { padding: 2.5rem; } }
+.section-badge { display:inline-flex; align-items:center; padding:6px 16px; border-radius:100px; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
 
-/* ── RIGHT — content half ── */
-.hero-content-half {
-  position: relative;
-  overflow: hidden;
-  padding: 3.5rem 1.5rem;
-  background:
-    radial-gradient(ellipse 80% 60% at 100% 0%,  rgba(0,51,160,.40) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 60% at 0% 100%,   rgba(7,137,48,.32) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 60% 50%,   rgba(255,209,0,.10) 0%, transparent 55%),
-    linear-gradient(135deg,#0a0a1a 0%,#0d1b3d 40%,#0a2a1a 75%,#0a0a1a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (min-width: 640px)  { .hero-content-half { padding: 4.5rem 2.5rem; } }
-@media (min-width: 1024px) { .hero-content-half { padding: 5rem 3.5rem; min-height: 100vh; } }
+::-webkit-scrollbar { width:8px; }
+::-webkit-scrollbar-track { background:#f5f5f5; }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom,#078930,#0033A0); border-radius:4px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom,#055e1f,#002470); }
 
-.hero-content-half::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,.025) 1px, transparent 1px),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,.025) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
+.mesh-bg-1 { background: radial-gradient(at 20% 20%, rgba(7,137,48,.08) 0%, transparent 50%), radial-gradient(at 80% 80%, rgba(0,51,160,.06) 0%, transparent 50%), radial-gradient(at 50% 50%, rgba(255,209,0,.04) 0%, transparent 50%), #fff; }
+.mesh-bg-2 { background: radial-gradient(at 0% 0%, rgba(0,51,160,.06) 0%, transparent 50%), radial-gradient(at 100% 100%, rgba(7,137,48,.06) 0%, transparent 50%), #fafafa; }
+.mesh-bg-dark { background: radial-gradient(at 20% 20%, rgba(7,137,48,.15) 0%, transparent 50%), radial-gradient(at 80% 80%, rgba(0,51,160,.15) 0%, transparent 50%), radial-gradient(at 50% 50%, rgba(255,209,0,.08) 0%, transparent 50%), #0f0f1a; }
 
-/* ── Orbs ── */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: orbFloat 20s ease-in-out infinite;
-  pointer-events: none;
-}
+.glass { background: rgba(255,255,255,.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border:1px solid rgba(255,255,255,.12); }
 
-/* ═══════════════════════════════════════════════════════════════
-   4. COMPONENTS
-   ═══════════════════════════════════════════════════════════════ */
-.card-modern {
-  transition: all .4s cubic-bezier(.4,0,.2,1);
-  border: 1px solid rgba(0,0,0,.06);
-}
-.card-modern:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,.15);
-  border-color: rgba(7,137,48,.25);
-}
+.img-overlay-pattern { position:absolute; inset:0; opacity:.12; background-image: radial-gradient(circle, white 1px, transparent 1px); background-size:20px 20px; }
+.img-overlay-gradient { position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 50%, rgba(0,0,0,.15) 100%); }
 
-.text-gradient-green {
-  background: linear-gradient(135deg,#078930,#0033A0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.text-gradient-gold {
-  background: linear-gradient(135deg,#FFD100,#DA291C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.timeline-dot { width:16px; height:16px; border-radius:50%; background:#078930; border:3px solid #fff; box-shadow: 0 0 0 3px #078930; }
 
-/* Buttons */
-.btn-primary {
-  background: linear-gradient(135deg,#078930,#055e1f);
-  color: #fff;
-  transition: all .3s ease;
-  position: relative;
-  overflow: hidden;
-}
-.btn-primary::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg,#055e1f,#078930);
-  opacity: 0;
-  transition: opacity .3s ease;
-}
-.btn-primary:hover::before { opacity: 1; }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(7,137,48,.35);
-}
-.btn-primary span,
-.btn-primary i { position: relative; z-index: 1; }
+.marquee-track { animation: marquee 45s linear infinite; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-.btn-outline {
-  border: 2px solid rgba(255,255,255,.3);
-  color: #fff;
-  transition: all .3s ease;
-}
-.btn-outline:hover {
-  background: rgba(255,255,255,.1);
-  border-color: #FFD100;
-  color: #FFD100;
-}
+.counter-value { font-variant-numeric: tabular-nums; }
 
-.btn-outline-dark {
-  border: 2px solid #e5e7eb;
-  color: #1a1a2e;
-  transition: all .3s ease;
-}
-.btn-outline-dark:hover {
-  border-color: #078930;
-  color: #078930;
-  background: #f0fdf4;
-}
+.flag-bar { height:5px; background: linear-gradient(90deg,#000 0%,#000 18%,#fff 18%,#fff 22%,#DA291C 22%,#DA291C 40%,#fff 40%,#fff 44%,#078930 44%,#078930 62%,#fff 62%,#fff 66%,#000 66%,#000 84%,#fff 84%,#fff 88%,#0033A0 88%,#0033A0 96%,#FFD100 96%,#FFD100 100%); }
 
-/* Badges */
-.section-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
+.stat-card { background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); backdrop-filter: blur(10px); }
 
-/* Glass surfaces */
-.glass {
-  background: rgba(255,255,255,.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.12);
-}
-.stat-card {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
-  backdrop-filter: blur(10px);
-}
+.img-frame { position:relative; isolation:isolate; }
 
-/* Backgrounds */
-.mesh-bg-1 {
-  background:
-    radial-gradient(at 20% 20%, rgba(7,137,48,.08) 0%, transparent 50%),
-    radial-gradient(at 80% 80%, rgba(0,51,160,.06) 0%, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(255,209,0,.04) 0%, transparent 50%),
-    #fff;
-}
-.mesh-bg-2 {
-  background:
-    radial-gradient(at 0% 0%, rgba(0,51,160,.06) 0%, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(7,137,48,.06) 0%, transparent 50%),
-    #fafafa;
-}
-.mesh-bg-dark {
-  background:
-    radial-gradient(at 20% 20%, rgba(7,137,48,.15) 0%, transparent 50%),
-    radial-gradient(at 80% 80%, rgba(0,51,160,.15) 0%, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(255,209,0,.08) 0%, transparent 50%),
-    #0f0f1a;
-}
-
-/* Noise overlay */
-.noise-overlay { position: relative; }
 .noise-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: .03;
-  pointer-events: none;
+  content:''; position:absolute; inset:0; opacity:.03; pointer-events:none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* Image helpers */
-.img-overlay-pattern {
-  position: absolute; inset: 0;
-  opacity: .12;
-  background-image: radial-gradient(circle, white 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
-}
-.img-overlay-gradient {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 55%, rgba(0,0,0,.15) 100%);
-  pointer-events: none;
-}
-.img-zoom { overflow: hidden; }
-.img-zoom img { transition: transform .8s cubic-bezier(.4,0,.2,1); }
-.img-zoom:hover img { transform: scale(1.08); }
-
-/* Misc */
-.timeline-dot {
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: #078930;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 3px #078930;
-}
-.counter-value { font-variant-numeric: tabular-nums; }
-.flag-bar {
-  height: 5px;
-  background: linear-gradient(90deg,
-    #000 0%, #000 18%,
-    #fff 18%, #fff 22%,
-    #DA291C 22%, #DA291C 40%,
-    #fff 40%, #fff 44%,
-    #078930 44%, #078930 62%,
-    #fff 62%, #fff 66%,
-    #000 66%, #000 84%,
-    #fff 84%, #fff 88%,
-    #0033A0 88%, #0033A0 96%,
-    #FFD100 96%, #FFD100 100%);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f5f5f5; }
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom,#078930,#0033A0);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom,#055e1f,#002470);
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   5. NAVBAR
-   ═══════════════════════════════════════════════════════════════ */
+/* ═══════════════ NAVBAR + TOP BAR ═══════════════ */
 #msaHeader { transition: all .3s ease; }
-.nav-scrolled {
-  background: rgba(255,255,255,.97) !important;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
-}
-.nav-scrolled .nav-link       { color: #1a1a2e !important; }
-.nav-scrolled .nav-link:hover { color: #078930 !important; }
-.nav-scrolled .nav-logo-text  { color: #1a1a2e !important; }
-.nav-scrolled .nav-logo-sub   { color: #078930 !important; }
-.nav-scrolled #mobileMenuBtn {
-  background: rgba(0,0,0,.05);
-  border-color: rgba(0,0,0,.08);
-  color: #1a1a2e;
-}
+.nav-scrolled { background: rgba(255,255,255,.97) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+.nav-scrolled .nav-link { color:#1a1a2e !important; }
+.nav-scrolled .nav-link:hover { color:#078930 !important; }
+.nav-scrolled .nav-logo-text { color:#1a1a2e !important; }
+.nav-scrolled .nav-logo-sub { color:#078930 !important; }
+.nav-scrolled #mobileMenuBtn { background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.08); color:#1a1a2e; }
 .nav-scrolled .dropdown-menu { border-color: rgba(0,0,0,.06); }
-.nav-scrolled .nav-caret     { color: currentColor; }
+.nav-scrolled .nav-caret { color: currentColor; }
 
-#msaTopBar {
-  max-height: 60px;
-  transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .28s ease;
-  overflow: hidden;
-}
-#msaHeader.is-scrolled #msaTopBar {
-  max-height: 0;
-  opacity: 0;
-}
+#msaTopBar { max-height: 60px; transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .28s ease; overflow:hidden; }
+#msaHeader.is-scrolled #msaTopBar { max-height: 0; opacity: 0; }
 
-/* Dropdowns */
+/* Dropdown */
 .dropdown-parent { position: relative; }
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  min-width: 250px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: 0 20px 50px -10px rgba(0,0,0,.22);
-  border: 1px solid rgba(0,0,0,.06);
-  opacity: 0;
-  visibility: hidden;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
+  position:absolute; top: calc(100% + 10px); left:50%; transform: translateX(-50%) translateY(8px);
+  min-width: 250px; background:#fff; border-radius: 16px; padding: 10px;
+  box-shadow: 0 20px 50px -10px rgba(0,0,0,.22); border: 1px solid rgba(0,0,0,.06);
+  opacity: 0; visibility: hidden; transition: all .3s cubic-bezier(.4,0,.2,1);
   z-index: 60;
 }
 .dropdown-parent:hover .dropdown-menu,
-.dropdown-parent.open .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
+.dropdown-parent.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .dropdown-menu a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1a1a2e;
-  transition: all .2s;
+  display:flex; align-items:center; gap:12px; padding: 11px 14px; border-radius: 10px;
+  font-size: 14px; font-weight: 500; color:#1a1a2e; transition: all .2s;
 }
-.dropdown-menu a:hover { background: #f0fdf4; color: #078930; }
-.dropdown-menu a i { width: 18px; color: #078930; font-size: 13px; }
-.dropdown-caret { font-size: 10px; margin-left: 5px; transition: transform .3s; }
+.dropdown-menu a:hover { background: #f0fdf4; color:#078930; }
+.dropdown-menu a i { width:18px; color:#078930; font-size:13px; }
+.dropdown-caret { font-size:10px; margin-left:5px; transition: transform .3s; }
 .dropdown-parent:hover .dropdown-caret { transform: rotate(180deg); }
 
 /* ── MOBILE MENU — Enhanced ── */
@@ -769,107 +522,47 @@ a.mm-footer-row:hover {
   border-radius: 4px;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   6. READING PROGRESS BAR
-   ═══════════════════════════════════════════════════════════════ */
-.reading-progress {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  z-index: 60;
-  background: linear-gradient(90deg,#078930,#FFD100,#DA291C,#0033A0);
-  transform-origin: 0%;
-  transform: scaleX(0);
-  transition: transform .1s linear;
-}
+/* ═══════════════ NEWS & MEDIA ═══════════════ */
+.ppf-art { position: relative; overflow: hidden; }
+.ppf-clamp-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.ppf-clamp-3 { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
 
-/* ═══════════════════════════════════════════════════════════════
-   7. ACCORDION
-   ═══════════════════════════════════════════════════════════════ */
-.acc-item {
-  border: 1px solid #e5e7eb;
-  border-radius: 18px;
-  overflow: hidden;
-  transition: all .3s ease;
-  background: #fff;
+.ppf-news-tab {
+  padding: .65rem 1.2rem; border-radius: 100px; font-size: .82rem; font-weight: 700;
+  color: #4b5563; background: #fff; border: 1px solid #e5e7eb;
+  transition: all .28s cubic-bezier(.4,0,.2,1); white-space: nowrap; cursor: pointer;
 }
-.acc-item.open {
-  border-color: #bbf7d0;
-  box-shadow: 0 10px 30px -8px rgba(7,137,48,.15);
-}
-.acc-header {
-  padding: 22px 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.acc-header:hover { background: #f9fafb; }
-.acc-title {
-  font-weight: 800;
-  color: #111827;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.acc-icon {
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.acc-caret { transition: transform .35s ease; color: #6b7280; }
-.acc-item.open .acc-caret { transform: rotate(180deg); }
-.acc-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .5s cubic-bezier(.4,0,.2,1);
-}
-.acc-item.open .acc-body { max-height: 1200px; }
-.acc-body-inner {
-  padding: 0 24px 24px 80px;
-  color: #4b5563;
-  line-height: 1.75;
-  font-size: .95rem;
-}
-@media (max-width: 640px) {
-  .acc-body-inner { padding: 0 20px 20px 20px; }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   8. TABS
-   ═══════════════════════════════════════════════════════════════ */
-.edu-tab {
-  padding: .75rem 1.4rem;
-  border-radius: 100px;
-  font-size: .85rem;
-  font-weight: 700;
-  color: #4b5563;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  transition: all .28s cubic-bezier(.4,0,.2,1);
-  white-space: nowrap;
-  cursor: pointer;
-}
-.edu-tab:hover {
-  color: #078930;
-  border-color: #bbf7d0;
-  background: #f0fdf4;
-}
-.edu-tab.is-active {
-  color: #fff;
-  border-color: transparent;
+.ppf-news-tab:hover { color: #078930; border-color: #bbf7d0; background: #f0fdf4; }
+.ppf-news-tab.is-active {
+  color: #fff; border-color: transparent;
   background: linear-gradient(135deg,#078930,#055e1f);
   box-shadow: 0 8px 20px -6px rgba(7,137,48,.45);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   9. REDUCED MOTION
-   ═══════════════════════════════════════════════════════════════ */
+.ppf-news-card { transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s cubic-bezier(.4,0,.2,1), border-color .4s; }
+.ppf-news-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -16px rgba(0,0,0,.18); border-color: rgba(7,137,48,.25); }
+.ppf-news-card:hover .ppf-readmore { gap: .7rem; }
+.ppf-readmore { transition: gap .3s ease; }
+.ppf-news-item.is-hidden { display: none !important; }
+
+.ppf-reveal { opacity: 0; transform: translateY(26px); }
+.ppf-reveal.is-in { animation: ppfReveal .7s cubic-bezier(.22,1,.36,1) forwards; }
+@keyframes ppfReveal { to { opacity: 1; transform: translateY(0); } }
+
+.ppf-mention { transition: background .28s ease, transform .28s ease; }
+.ppf-mention:hover { background: #fff; transform: translateX(4px); }
+.ppf-mention:hover .ppf-ext { transform: translate(3px,-3px); opacity: 1; }
+.ppf-ext { transition: transform .28s ease, opacity .28s ease; opacity: .45; }
+
+.ppf-press { transition: transform .35s cubic-bezier(.4,0,.2,1), border-color .35s, background .35s; }
+.ppf-press:hover { transform: translateY(-4px); border-color: rgba(255,209,0,.5); background: rgba(255,255,255,.07); }
+
+/* Image hover zoom */
+.img-zoom { overflow:hidden; }
+.img-zoom img { transition: transform .7s cubic-bezier(.4,0,.2,1); }
+.img-zoom:hover img { transform: scale(1.08); }
+
+/* ═══════════════ REDUCED MOTION ═══════════════ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -878,18 +571,21 @@ a.mm-footer-row:hover {
     transition-duration: .001ms !important;
   }
   .hidden-anim { opacity: 1 !important; }
+  .ppf-reveal, .ppf-news-card, .ppf-mention, .ppf-press {
+    animation: none !important; transition: none !important;
+    opacity: 1 !important; transform: none !important;
+  }
 }
 </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-<div class="reading-progress" id="readingProgress"></div>
-
-<a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[70] focus:px-4 focus:py-2 focus:bg-white focus:text-brand-600 focus:rounded-lg focus:font-bold">Skip to content</a>
+<a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[70] focus:px-4 focus:py-2 focus:bg-white focus:text-brand-600 focus:rounded-lg focus:font-bold">Skip to content</a>
 
 <!-- ═══════════════ HEADER ═══════════════ -->
 <header id="msaHeader" class="fixed top-0 left-0 right-0 z-50">
 
+  <!-- TOP BAR -->
   <div id="msaTopBar" class="bg-surface-900 text-white/60 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-10 text-xs">
@@ -919,10 +615,12 @@ a.mm-footer-row:hover {
     </div>
   </div>
 
+  <!-- NAVIGATION -->
   <nav id="navbar" class="relative transition-all duration-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
 
+        <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-3" aria-label="MSA home">
   <div class="w-12 h-12 rounded-xl overflow-hidden shadow-lg flex-shrink-0 bg-white ring-1 ring-white/20">
     <img src="assets/msalogo.jpeg"
@@ -936,45 +634,49 @@ a.mm-footer-row:hover {
   </div>
 </a>
 
+        <!-- Desktop nav -->
         <div class="hidden lg:flex items-center space-x-1">
-          <a href="index.html" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Home</a>
+          <a href="#home" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Home</a>
 
+          <!-- About dropdown -->
           <div class="dropdown-parent">
             <button type="button" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center">
               About <i class="fas fa-chevron-down dropdown-caret"></i>
             </button>
             <div class="dropdown-menu">
-              <a href="index.html#about"><i class="fas fa-info-circle"></i> Who We Are</a>
-              <a href="index.html#about"><i class="fas fa-bullseye"></i> Mission &amp; Vision</a>
-              <a href="index.html#values"><i class="fas fa-heart"></i> Core Values</a>
-              <a href="index.html#impact"><i class="fas fa-chart-line"></i> Our Capacity</a>
+              <a href="#about"><i class="fas fa-info-circle"></i> Who We Are</a>
+              <a href="#about"><i class="fas fa-bullseye"></i> Mission &amp; Vision</a>
+              <a href="#values"><i class="fas fa-heart"></i> Core Values</a>
+              <a href="#impact"><i class="fas fa-chart-line"></i> Our Capacity</a>
             </div>
           </div>
 
+          <!-- Programs dropdown -->
           <div class="dropdown-parent">
             <button type="button" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center">
               Programs <i class="fas fa-chevron-down dropdown-caret"></i>
             </button>
             <div class="dropdown-menu">
-              <a href="education.html" class="!text-brand-600 !font-bold"><i class="fas fa-graduation-cap"></i> Education</a>
-              <a href="index.html#programs"><i class="fas fa-heartbeat"></i> Health</a>
-              <a href="index.html#programs"><i class="fas fa-seedling"></i> Resilience &amp; Recovery</a>
-              <a href="index.html#programs"><i class="fas fa-balance-scale"></i> Governance</a>
-              <a href="index.html#programs"><i class="fas fa-shield-halved"></i> Protection</a>
-              <a href="index.html#programs"><i class="fas fa-tower-broadcast"></i> Information &amp; Media</a>
+              <a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a>
+              <a href="#programs"><i class="fas fa-heartbeat"></i> Health</a>
+              <a href="#programs"><i class="fas fa-seedling"></i> Resilience &amp; Recovery</a>
+              <a href="#programs"><i class="fas fa-balance-scale"></i> Governance</a>
+              <a href="#programs"><i class="fas fa-shield-halved"></i> Protection</a>
+              <a href="#programs"><i class="fas fa-tower-broadcast"></i> Information &amp; Media</a>
             </div>
           </div>
 
-          <a href="index.html#impact" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Impact</a>
-          <a href="index.html#news" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">News</a>
-          <a href="index.html#contact" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Contact</a>
+          <a href="#impact" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Impact</a>
+          <a href="#news" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">News</a>
+          <a href="#contact" class="nav-link text-white/90 hover:text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">Contact</a>
 
-          <a href="index.html#contact" class="btn-primary ml-4 px-6 py-2.5 rounded-xl text-sm font-bold">
+          <a href="#contact" class="btn-primary ml-4 px-6 py-2.5 rounded-xl text-sm font-bold">
             <span>Partner With Us</span>
             <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
 
+        <!-- Mobile menu button -->
         <button id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"
                 class="lg:hidden text-white text-xl w-11 h-11 rounded-lg glass flex items-center justify-center">
           <i class="fas fa-bars"></i>
@@ -1000,7 +702,7 @@ a.mm-footer-row:hover {
       <div class="mm-body">
 
         <!-- Home -->
-        <a href="index.html" class="mm-link">
+        <a href="index.html" class="mm-link mm-active">
           <i class="fas fa-home mm-ico"></i>
           Home
         </a>
@@ -1022,12 +724,12 @@ a.mm-footer-row:hover {
 
         <!-- Programs -->
         <div class="mm-dropdown">
-          <button type="button" class="mm-dropdown-btn mm-open" data-mm-toggle>
+          <button type="button" class="mm-dropdown-btn" data-mm-toggle>
             <i class="fas fa-layer-group mm-ico"></i>
             Programs
             <i class="fas fa-chevron-down mm-chev"></i>
           </button>
-          <div class="mm-submenu mm-sub-open">
+          <div class="mm-submenu">
             <a href="education.html" class="mm-sub-active">Education</a>
             <a href="index.html#programs">Health</a>
             <a href="index.html#programs">Resilience &amp; Recovery</a>
@@ -1096,881 +798,1194 @@ a.mm-footer-row:hover {
     </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SPLIT HERO
-     ═══════════════════════════════════════════════════════════════ -->
-<section id="hero" class="split-hero">
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <div class="hero-image-bg">
+    <div class="hero-overlay-photo" style="background-image:url('assets/msa1.jpeg');"></div>
+    <div class="orb w-96 h-96 bg-brand-500/25 -top-20 -left-20"></div>
+    <div class="orb w-80 h-80 bg-navy-500/25 top-1/3 right-0" style="animation-delay:5s"></div>
+    <div class="orb w-64 h-64 bg-gold-400/15 bottom-20 left-1/3" style="animation-delay:10s"></div>
+    <div class="orb w-72 h-72 bg-red-500/12 top-20 right-1/4" style="animation-delay:15s"></div>
 
-  <!-- LEFT — PHOTO -->
-  <div class="hero-photo-half">
-    <img src="assets/msa3.jpeg"
-         alt="Students learning in a classroom in South Sudan"
-         loading="eager">
+    <!-- Decorative flag + landscape -->
+    <svg class="absolute bottom-0 left-0 right-0 w-full h-3/4 opacity-25" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.1)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+        </linearGradient>
+        <linearGradient id="flagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#078930"/>
+          <stop offset="50%" stop-color="#FFD100"/>
+          <stop offset="100%" stop-color="#0033A0"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="500" width="1440" height="100" fill="url(#groundGrad)"/>
+      <g fill="rgba(255,255,255,0.15)">
+        <ellipse cx="200" cy="420" rx="25" ry="30"/><rect x="180" y="440" width="40" height="80" rx="10"/>
+        <ellipse cx="300" cy="400" rx="28" ry="32"/><rect x="278" y="425" width="44" height="90" rx="10"/>
+        <ellipse cx="420" cy="410" rx="26" ry="30"/><rect x="400" y="435" width="40" height="85" rx="10"/>
+        <ellipse cx="550" cy="390" rx="30" ry="34"/><rect x="526" y="418" width="48" height="95" rx="10"/>
+        <ellipse cx="700" cy="380" rx="32" ry="36"/><rect x="674" y="410" width="52" height="100" rx="10"/>
+        <ellipse cx="850" cy="395" rx="28" ry="32"/><rect x="828" y="420" width="44" height="90" rx="10"/>
+        <ellipse cx="980" cy="405" rx="26" ry="30"/><rect x="960" y="430" width="40" height="85" rx="10"/>
+        <ellipse cx="1100" cy="415" rx="27" ry="31"/><rect x="1079" y="440" width="42" height="80" rx="10"/>
+        <ellipse cx="1230" cy="400" rx="29" ry="33"/><rect x="1207" y="426" width="46" height="90" rx="10"/>
+      </g>
+      <g transform="translate(680, 200)">
+        <rect x="0" y="0" width="4" height="250" fill="rgba(255,255,255,0.3)"/>
+        <path d="M4 10 Q80 0 160 20 Q80 40 4 50 Z" fill="url(#flagGrad)" opacity="0.65"/>
+      </g>
+    </svg>
+  </div>
 
-    <div class="hero-photo-overlay"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="animate-fadeInUp">
+          <span class="inline-flex items-center px-4 py-2 rounded-full glass text-gold-400 text-sm font-bold mb-8">
+            <span class="w-2 h-2 rounded-full bg-gold-400 mr-2 animate-pulse"></span>
+            Since 2000 • Maridi, South Sudan 🇸🇸
+          </span>
+        </div>
+        <h1 class="animate-fadeInUp text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white leading-[1.05] mb-8" style="animation-delay:.1s">
+          Empowering<br><span class="text-gradient-gold">Communities</span><br>for a Sustainable Future
+        </h1>
+        <p class="animate-fadeInUp text-lg sm:text-xl text-white/75 mb-10 leading-relaxed max-w-xl" style="animation-delay:.2s">
+          MSA envisions literate, healthy and well informed communities in South Sudan — through Education, Health, Resilience &amp; Recovery, Governance, Protection and Media.
+        </p>
+        <div class="animate-fadeInUp flex flex-wrap gap-4" style="animation-delay:.3s">
+          <a href="#programs" class="btn-primary px-8 py-4 rounded-2xl font-bold text-base inline-flex items-center">
+            <span>Explore Programs</span><i class="fas fa-arrow-right ml-3"></i>
+          </a>
+          <a href="#about" class="btn-outline px-8 py-4 rounded-2xl font-bold text-base inline-flex items-center">
+            <i class="fas fa-play mr-3 text-sm"></i><span>Our Story</span>
+          </a>
+        </div>
 
-    <div class="hero-photo-caption">
-      <div class="animate-fadeInUp">
-        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full glass text-gold-400 text-[11px] sm:text-xs font-bold tracking-wide">
-          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 mr-2 animate-pulse"></span>
-          MSA EDUCATION PROGRAM
-        </span>
+        <div class="animate-fadeInUp grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-white/10" style="animation-delay:.4s">
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white counter-value" data-target="15">0</div>
+            <div class="text-white/55 text-xs sm:text-sm mt-1">Years of Service</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white counter-value" data-target="4">0</div>
+            <div class="text-white/55 text-xs sm:text-sm mt-1">Schools Established</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white counter-value" data-target="20000">0</div>
+            <div class="text-white/55 text-xs sm:text-sm mt-1">Radio Listeners</div>
+          </div>
+        </div>
       </div>
 
-      <p class="hidden lg:block text-white/75 text-sm leading-relaxed max-w-sm mt-4 animate-fadeInUp" style="animation-delay:.15s">
-        From nursery to secondary — building a literate South Sudan, one child at a time.
-      </p>
+      <!-- Hero visual -->
+      <div class="hidden lg:block animate-fadeInRight" style="animation-delay:.4s">
+        <div class="relative">
+          <div class="img-frame rounded-3xl">
+            <div class="relative overflow-hidden rounded-3xl h-[520px] shadow-2xl">
+              <img src="assets/msa6.jpeg" alt="Students in classroom in South Sudan" class="w-full h-full object-cover">
+              <div class="img-overlay-gradient"></div>
+              <div class="img-overlay-pattern"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-gold-400/25 backdrop-blur-sm text-gold-300 text-xs font-bold mb-3">EDUCATION PROGRAM</span>
+                <h3 class="text-white font-display font-bold text-2xl mb-2">Maridi High School</h3>
+                <p class="text-white/75 text-sm">One secondary school and three community nursery schools, supporting youth and children to attain quality education.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="hidden lg:grid grid-cols-3 gap-3 mt-5 animate-fadeInUp" style="animation-delay:.3s">
-        <div class="glass rounded-xl p-3 backdrop-blur-md">
-          <div class="text-xl font-extrabold text-white counter-value" data-target="4">0</div>
-          <div class="text-white/60 text-[10px] mt-0.5 font-semibold uppercase tracking-wide">Schools</div>
-        </div>
-        <div class="glass rounded-xl p-3 backdrop-blur-md">
-          <div class="text-xl font-extrabold text-white counter-value" data-target="50">0</div>
-          <div class="text-white/60 text-[10px] mt-0.5 font-semibold uppercase tracking-wide">Girls</div>
-        </div>
-        <div class="glass rounded-xl p-3 backdrop-blur-md">
-          <div class="text-xl font-extrabold text-white">4Y</div>
-          <div class="text-white/60 text-[10px] mt-0.5 font-semibold uppercase tracking-wide">Sponsorship</div>
+          <div class="absolute -top-6 -right-6 glass rounded-2xl p-4 animate-float shadow-2xl">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-brand-500 flex items-center justify-center"><i class="fas fa-tower-broadcast text-white text-sm"></i></div>
+              <div>
+                <p class="text-white font-bold text-sm">88.9 FM</p>
+                <p class="text-white/60 text-xs">Maridi FM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-6 -left-6 glass rounded-2xl p-4 animate-float shadow-2xl" style="animation-delay:3s">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-gold-400 flex items-center justify-center"><i class="fas fa-hand-holding-heart text-surface-900 text-sm"></i></div>
+              <div>
+                <p class="text-white font-bold text-sm">20+ Monthly</p>
+                <p class="text-white/60 text-xs">GBV Cases Supported</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- RIGHT — CONTENT -->
-  <div class="hero-content-half">
-    <div class="orb w-72 h-72 bg-brand-500/25 -top-10 -right-16"></div>
-    <div class="orb w-64 h-64 bg-navy-500/25 bottom-10 left-0" style="animation-delay:5s"></div>
-    <div class="orb w-48 h-48 bg-gold-400/15 top-1/2 right-1/3" style="animation-delay:9s"></div>
-
-    <div class="relative z-10 w-full max-w-xl">
-
-     
-
-      <h1 class="animate-fadeInUp font-display font-extrabold text-white leading-[1.05] text-[2.25rem] sm:text-5xl lg:text-[3.5rem] mb-6" style="animation-delay:.08s">
-        Eradicating<br>
-        <span class="text-gradient-gold">Illiteracy</span><br>
-        in South Sudan
-      </h1>
-
-      <p class="animate-fadeInUp text-white/75 text-base sm:text-lg leading-relaxed mb-8 max-w-lg" style="animation-delay:.16s">
-        MSA establishes and manages schools, supports teacher trainings, distributes educational materials, and promotes female child education — building a literate, healthy and well-informed nation.
-      </p>
-
-      <div class="animate-fadeInUp flex flex-wrap gap-3 mb-9" style="animation-delay:.24s">
-        <a href="#programs-detail" class="btn-primary px-6 py-3.5 rounded-2xl font-bold text-sm inline-flex items-center">
-          <span>Explore the Program</span><i class="fas fa-arrow-right ml-2.5"></i>
-        </a>
-        <a href="#support" class="btn-outline px-6 py-3.5 rounded-2xl font-bold text-sm inline-flex items-center">
-          <i class="fas fa-hand-holding-heart mr-2.5"></i><span>Support a Girl</span>
-        </a>
-      </div>
-
-      <div class="animate-fadeInUp grid grid-cols-3 gap-4 pt-7 border-t border-white/10" style="animation-delay:.32s">
-        <div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white counter-value" data-target="4">0</div>
-          <div class="text-white/55 text-[10px] sm:text-xs mt-1 font-semibold uppercase tracking-wide">Schools</div>
-        </div>
-        <div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white counter-value" data-target="50">0</div>
-          <div class="text-white/55 text-[10px] sm:text-xs mt-1 font-semibold uppercase tracking-wide">Girls Sponsored</div>
-        </div>
-        <div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-white">4 Yrs</div>
-          <div class="text-white/55 text-[10px] sm:text-xs mt-1 font-semibold uppercase tracking-wide">Scholarship</div>
-        </div>
-      </div>
-
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+    <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+      <div class="w-1 h-2.5 bg-gold-400 rounded-full animate-bounce"></div>
     </div>
   </div>
 </section>
 
 <div class="flag-bar"></div>
 
-<!-- ═══════════════ OVERVIEW INTRO ═══════════════ -->
-<section class="py-24 mesh-bg-1 relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-brand-50 text-brand-600 mb-6"><i class="fas fa-book-open mr-2"></i>Education Program</span>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6 leading-tight">
-        Building a <span class="text-gradient-green">Literate</span> Nation
-      </h2>
-      <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
-        Education is the cornerstone of everything MSA does. We believe that a literate community is a healthy, informed and prosperous one — and that every child, regardless of circumstance, deserves access to quality learning.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="hidden-anim card-modern bg-white rounded-2xl p-7" data-anim="fadeInUp">
-        <div class="w-14 h-14 rounded-2xl bg-brand-50 flex items-center justify-center mb-5"><i class="fas fa-school text-brand-500 text-xl"></i></div>
-        <h3 class="font-extrabold text-gray-900 text-lg mb-2">Schools We Manage</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">One mixed secondary school and three community nursery schools — serving displaced and host communities across Maridi County.</p>
-      </div>
-      <div class="hidden-anim card-modern bg-white rounded-2xl p-7" data-anim="fadeInUp" style="animation-delay:.1s">
-        <div class="w-14 h-14 rounded-2xl bg-navy-50 flex items-center justify-center mb-5"><i class="fas fa-user-graduate text-navy-500 text-xl"></i></div>
-        <h3 class="font-extrabold text-gray-900 text-lg mb-2">Girls We Sponsor</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Full 4-year secondary school scholarships — covering tuition, materials, uniforms and all requirements from Senior One to Senior Four.</p>
-      </div>
-      <div class="hidden-anim card-modern bg-white rounded-2xl p-7" data-anim="fadeInUp" style="animation-delay:.2s">
-        <div class="w-14 h-14 rounded-2xl bg-gold-100 flex items-center justify-center mb-5"><i class="fas fa-chalkboard-user text-yellow-600 text-xl"></i></div>
-        <h3 class="font-extrabold text-gray-900 text-lg mb-2">Teachers We Train</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Capacity building for teachers and Parent-Teacher Associations (PTAs) to strengthen the quality of education delivered in schools.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ PROGRAM DETAILS (STATIC CARDS) ═══════════════ -->
-<section id="programs-detail" class="py-24 mesh-bg-1 relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Section header -->
-    <div class="text-center mb-16 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-navy-50 text-navy-600 mb-6">
-        <i class="fas fa-list-check mr-2"></i>What We Deliver
-      </span>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">
-        Our Education <span class="text-gradient-green">Activities</span>
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-        Six core focus areas that define MSA's work in education — each one designed to break down the barriers that keep children out of school across South Sudan.
-      </p>
-    </div>
-
-    <!-- Activities grid -->
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <!-- 01 — Establishment and Management of Schools -->
-      <article class="hidden-anim group relative bg-white rounded-3xl border border-gray-100 card-modern overflow-hidden md:col-span-2" data-anim="fadeInUp">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-500 via-brand-400 to-navy-500"></div>
-        <div class="p-7 sm:p-9">
-          <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/25">
-                <i class="fas fa-school text-white text-2xl"></i>
-              </div>
-              <p class="text-[10px] font-extrabold text-brand-500 tracking-widest mt-3 text-center">01</p>
-            </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <h3 class="text-2xl font-display font-extrabold text-gray-900">Establishment and Management of Schools</h3>
-                <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-[10px] font-extrabold uppercase tracking-wide">Core</span>
-              </div>
-              <p class="text-gray-600 leading-relaxed mb-4">
-                MSA runs and manages <strong class="text-gray-900">one secondary school and three community nursery schools</strong>, supporting youth and children to attain quality education. We established <strong class="text-gray-900">Maridi High School</strong> — a mixed secondary school in Maridi County — and established community Nursery Schools in areas where IDPs have densely settled.
-              </p>
-              <p class="text-gray-600 leading-relaxed mb-5">
-                These schools help children of the displaced and host communities to get educated and have hope for the future. Our approach integrates community ownership, parent engagement and continuous quality improvement.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-bold">
-                  <i class="fas fa-check-circle mr-1.5 text-[10px]"></i>Maridi High School
-                </span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-bold">
-                  <i class="fas fa-check-circle mr-1.5 text-[10px]"></i>Community Nursery Schools
-                </span>
-                <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-brand-50 text-brand-700 text-xs font-bold">
-                  <i class="fas fa-check-circle mr-1.5 text-[10px]"></i>IDP Settlements
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 02 — Capacity Building -->
-      <article class="hidden-anim group bg-white rounded-3xl border border-gray-100 card-modern overflow-hidden" data-anim="fadeInUp" style="animation-delay:.06s">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy-500 to-navy-700"></div>
-        <div class="p-7">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy-500 to-navy-700 flex items-center justify-center shadow-lg shadow-navy-500/25 flex-shrink-0">
-              <i class="fas fa-chalkboard-user text-white text-xl"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-extrabold text-navy-500 tracking-widest mb-1">02</p>
-              <h3 class="text-lg font-display font-extrabold text-gray-900 leading-tight">Capacity Building to Teachers &amp; PTAs</h3>
-            </div>
-          </div>
-          <p class="text-gray-600 leading-relaxed text-sm mb-4">
-            We invest in the people who deliver education. MSA conducts capacity building programs for <strong class="text-gray-900">teachers and Parent-Teacher Associations (PTAs)</strong> in schools.
-          </p>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start"><i class="fas fa-check text-navy-500 mr-2.5 mt-1 text-[10px]"></i><span>Pedagogy &amp; classroom management</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-navy-500 mr-2.5 mt-1 text-[10px]"></i><span>Child safeguarding practices</span></li>
-            <li class="flex items-start"><i class="fas fa-check text-navy-500 mr-2.5 mt-1 text-[10px]"></i><span>Community engagement skills</span></li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 03 — Distribution of Educational Materials -->
-      <article class="hidden-anim group bg-white rounded-3xl border border-gray-100 card-modern overflow-hidden" data-anim="fadeInUp" style="animation-delay:.12s">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-400 to-yellow-600"></div>
-        <div class="p-7">
-          <div class="flex items-start gap-4 mb-5">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-yellow-600 flex items-center justify-center shadow-lg shadow-gold-400/30 flex-shrink-0">
-              <i class="fas fa-boxes-stacked text-surface-900 text-xl"></i>
-            </div>
-            <div>
-              <p class="text-[10px] font-extrabold text-yellow-600 tracking-widest mb-1">03</p>
-              <h3 class="text-lg font-display font-extrabold text-gray-900 leading-tight">Distribution of Educational Materials</h3>
-            </div>
-          </div>
-          <p class="text-gray-600 leading-relaxed text-sm mb-4">
-            MSA distributes educational materials and facilities to schools and students — reducing the barriers to quality education.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-gold-50 text-yellow-700 text-[11px] font-bold"><i class="fas fa-book mr-1.5"></i>Textbooks</span>
-            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-gold-50 text-yellow-700 text-[11px] font-bold"><i class="fas fa-pencil mr-1.5"></i>Stationery</span>
-            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-gold-50 text-yellow-700 text-[11px] font-bold"><i class="fas fa-chair mr-1.5"></i>Desks</span>
-            <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-gold-50 text-yellow-700 text-[11px] font-bold"><i class="fas fa-cube mr-1.5"></i>Facilities</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 — Awareness & Sensitisation (wide) -->
-      <article class="hidden-anim group bg-white rounded-3xl border border-gray-100 card-modern overflow-hidden md:col-span-2" data-anim="fadeInUp" style="animation-delay:.18s">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 via-red-400 to-gold-400"></div>
-        <div class="p-7 sm:p-9">
-          <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center shadow-lg shadow-red-500/25">
-                <i class="fas fa-bullhorn text-white text-2xl"></i>
-              </div>
-              <p class="text-[10px] font-extrabold text-red-500 tracking-widest mt-3 text-center">04</p>
-            </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <h3 class="text-2xl font-display font-extrabold text-gray-900">Awareness, Creation and Sensitisation</h3>
-                <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-[10px] font-extrabold uppercase tracking-wide">Advocacy</span>
-              </div>
-              <p class="text-gray-600 leading-relaxed mb-4">
-                MSA carries out massive community education awareness programs in an effort to promote education in the areas of our operation. We carry both <strong class="text-gray-900">in-school and out-of-school awareness programs</strong> targeting girls and their communities.
-              </p>
-              <p class="text-gray-600 leading-relaxed mb-5">
-                In 2018, MSA massively conducted an in-school awareness campaign using women role models to talk to girls about the importance of education and the dangers of early marriage and unwanted pregnancy — under the theme:
-              </p>
-              <blockquote class="relative border-l-4 border-gold-400 pl-5 py-2 my-5 bg-gold-50/60 rounded-r-xl">
-                <i class="fas fa-quote-left text-gold-300 text-2xl absolute top-3 right-4 opacity-60"></i>
-                <p class="italic text-gray-800 font-display text-lg relative pr-12">"Girls Decide Today and Save Your Future."</p>
-              </blockquote>
-              <p class="text-gray-600 leading-relaxed text-sm">
-                We also support Government set programs such as girls' celebration of Girls' Education Days that aim at creating more awareness on girls' education.
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05 — Sponsorships (wide) -->
-      <article class="hidden-anim group bg-white rounded-3xl border border-gray-100 card-modern overflow-hidden md:col-span-2" data-anim="fadeInUp" style="animation-delay:.24s">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-purple-400 to-pink-500"></div>
-        <div class="p-7 sm:p-9">
-          <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-500/25">
-                <i class="fas fa-award text-white text-2xl"></i>
-              </div>
-              <p class="text-[10px] font-extrabold text-purple-500 tracking-widest mt-3 text-center">05</p>
-            </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <h3 class="text-2xl font-display font-extrabold text-gray-900">Sponsorships</h3>
-                <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-[10px] font-extrabold uppercase tracking-wide">Life-changing</span>
-              </div>
-              <p class="text-gray-600 leading-relaxed mb-4">
-                MSA provides <strong class="text-gray-900">scholarships to girls in Secondary Schools and vulnerable children in primary schools</strong>. We pay all their tuition fees, provide scholastic materials, uniforms and other requirements for the girls and children under MSA scholarship.
-              </p>
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Our scholarship runs for <strong class="text-gray-900">4 years for Secondary School girls</strong> — from Senior One to Senior Four — ensuring sustained support through the full secondary cycle.
-              </p>
-
-              <!-- What's covered -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div class="rounded-2xl bg-gradient-to-br from-brand-50 to-white border border-brand-100 p-4 text-center hover:shadow-md transition-shadow">
-                  <div class="w-10 h-10 mx-auto rounded-xl bg-brand-500 flex items-center justify-center mb-2.5">
-                    <i class="fas fa-money-bill-wave text-white text-sm"></i>
-                  </div>
-                  <p class="text-xs font-extrabold text-gray-800">Tuition Fees</p>
-                </div>
-                <div class="rounded-2xl bg-gradient-to-br from-navy-50 to-white border border-navy-100 p-4 text-center hover:shadow-md transition-shadow">
-                  <div class="w-10 h-10 mx-auto rounded-xl bg-navy-500 flex items-center justify-center mb-2.5">
-                    <i class="fas fa-book text-white text-sm"></i>
-                  </div>
-                  <p class="text-xs font-extrabold text-gray-800">Scholastic Materials</p>
-                </div>
-                <div class="rounded-2xl bg-gradient-to-br from-gold-50 to-white border border-gold-200 p-4 text-center hover:shadow-md transition-shadow">
-                  <div class="w-10 h-10 mx-auto rounded-xl bg-gold-400 flex items-center justify-center mb-2.5">
-                    <i class="fas fa-shirt text-surface-900 text-sm"></i>
-                  </div>
-                  <p class="text-xs font-extrabold text-gray-800">Uniforms</p>
-                </div>
-                <div class="rounded-2xl bg-gradient-to-br from-red-50 to-white border border-red-100 p-4 text-center hover:shadow-md transition-shadow">
-                  <div class="w-10 h-10 mx-auto rounded-xl bg-red-500 flex items-center justify-center mb-2.5">
-                    <i class="fas fa-clipboard-list text-white text-sm"></i>
-                  </div>
-                  <p class="text-xs font-extrabold text-gray-800">All Requirements</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06 — Promotion of Female Child Education (wide) -->
-      <article class="hidden-anim group bg-gradient-to-br from-pink-50 via-white to-pink-50 rounded-3xl border border-pink-100 card-modern overflow-hidden md:col-span-2 relative" data-anim="fadeInUp" style="animation-delay:.3s">
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 via-pink-400 to-brand-500"></div>
-        <div class="p-7 sm:p-9">
-          <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center shadow-lg shadow-pink-500/25">
-                <i class="fas fa-female text-white text-2xl"></i>
-              </div>
-              <p class="text-[10px] font-extrabold text-pink-500 tracking-widest mt-3 text-center">06</p>
-            </div>
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <h3 class="text-2xl font-display font-extrabold text-gray-900">Promotion of Female Child Education</h3>
-                <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-[10px] font-extrabold uppercase tracking-wide">Flagship</span>
-              </div>
-              <p class="text-gray-600 leading-relaxed mb-6">
-                Promoting the girl child is central to MSA's education mission. We run girls' education programs that combine:
-              </p>
-
-              <ul class="grid sm:grid-cols-2 gap-3">
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">In-school awareness campaigns with women role models</span>
-                </li>
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">Out-of-school community sensitisation</span>
-                </li>
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">Full 4-year secondary school scholarships for girls</span>
-                </li>
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">Support to Government-led Girls' Education Days</span>
-                </li>
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">Monthly advisory meetings on sex education &amp; pregnancy prevention</span>
-                </li>
-                <li class="flex items-start p-3 rounded-xl bg-white/70 border border-pink-100">
-                  <i class="fas fa-check-circle text-pink-500 mr-3 mt-0.5 text-sm"></i>
-                  <span class="text-sm text-gray-700 font-medium">"Sports for Girls" programs for confidence &amp; leadership</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Footer note -->
-    <div class="text-center mt-14 hidden-anim" data-anim="fadeInUp">
-      <p class="text-gray-500 text-sm mb-6 max-w-2xl mx-auto">
-        Every activity above is delivered hand-in-hand with communities, local authorities and partners — because sustainable change is built together.
-      </p>
-      <a href="#support" class="btn-primary px-8 py-4 rounded-2xl font-bold inline-flex items-center">
-        <span>Support Our Education Work</span><i class="fas fa-arrow-right ml-3"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════ GIRL CHILD EDUCATION — FEATURE ═══════════════ -->
-<section class="py-24 mesh-bg-2 relative overflow-hidden">
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about" class="py-28 mesh-bg-1 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
 
-      <div class="hidden-anim relative order-2 lg:order-1" data-anim="fadeInLeft">
+      <div class="hidden-anim relative" data-anim="fadeInLeft">
         <div class="relative">
-          <div class="overflow-hidden rounded-3xl h-[560px] shadow-2xl img-zoom">
-            <img src="assets/msa4.jpeg" alt="Girls in school in South Sudan" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div class="relative overflow-hidden rounded-3xl h-[560px] shadow-2xl img-zoom">
+            <img src="assets/msa3.jpeg" alt="Community members in South Sudan" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-8">
-              <span class="inline-flex items-center px-3 py-1 rounded-full bg-gold-400/25 backdrop-blur-sm text-gold-300 text-xs font-bold mb-3">GIRL CHILD EDUCATION</span>
-              <p class="text-white font-display font-bold text-2xl mb-1">Girls Decide Today</p>
-              <p class="text-white/75 text-sm">Save Your Future — MSA Campaign Theme</p>
-            </div>
-          </div>
-
-          <div class="absolute -top-6 -right-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 animate-float">
-            <div class="flex items-center space-x-3">
-              <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center"><i class="fas fa-female text-pink-500 text-xl"></i></div>
-              <div>
-                <p class="font-extrabold text-gray-900 text-lg leading-none">4 Years</p>
-                <p class="text-gray-500 text-xs mt-1">Full Scholarship</p>
+              <div class="flex items-center space-x-3 mb-2">
+                <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center"><i class="fas fa-hands-helping text-white"></i></div>
+                <div>
+                  <p class="text-white font-bold">Unity in Action</p>
+                  <p class="text-white/70 text-sm">Maridi • Juba • Yei</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 animate-float" style="animation-delay:3s">
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-brand-500/15 blur-xl"></div>
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-navy-500/15 blur-xl"></div>
+
+          <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl p-5 shadow-xl border border-gray-100">
             <div class="flex items-center space-x-3">
-              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center"><i class="fas fa-heart text-brand-500 text-xl"></i></div>
+              <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center"><i class="fas fa-award text-brand-500 text-xl"></i></div>
               <div>
-                <p class="font-extrabold text-gray-900 text-lg leading-none">All Inclusive</p>
-                <p class="text-gray-500 text-xs mt-1">Fees, uniforms &amp; more</p>
+                <p class="font-extrabold text-gray-900 text-lg">Since 2000</p>
+                <p class="text-gray-500 text-sm">Serving Communities</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="hidden-anim order-1 lg:order-2" data-anim="fadeInRight">
-        <span class="section-badge bg-pink-50 text-pink-600 mb-6"><i class="fas fa-star mr-2"></i>Flagship Focus</span>
+      <div class="hidden-anim" data-anim="fadeInRight">
+        <span class="section-badge bg-brand-50 text-brand-600 mb-6"><i class="fas fa-info-circle mr-2"></i>About MSA</span>
         <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6 leading-tight">
-          Every Girl Deserves<br><span class="text-gradient-gold">A Future</span>
+          Building a Literate, Healthy &amp;<br><span class="text-gradient-green">Well-Informed</span> South Sudan
         </h2>
         <p class="text-gray-600 text-lg leading-relaxed mb-6">
-          MSA is widely recognised for its relentless promotion of female child education. Through community sensitisation, women role models, and full scholarships, we are breaking down the barriers that keep girls out of school.
+          MSA (Mission for Sustainable Advancement) is a legally registered National Organisation operating in South Sudan. MSA began in 2000 operating as <strong class="text-gray-800">Maridi Students Association</strong>, transformed into <strong class="text-gray-800">Maridi Service Agency</strong> in 2005, and in 2021 — due to expansion across sectors — became <strong class="text-gray-800">Mission For Sustainable Advancement</strong>, maintaining its brand name MSA.
         </p>
         <p class="text-gray-600 leading-relaxed mb-8">
-          We work with communities, local authorities, families and the girls themselves — because lasting change happens when everyone is involved. From Senior One to Senior Four, our scholars receive everything they need to succeed.
+          Through intense capacity building from external partners, MSA now operates with strengthened Governance, Management, Financial Management, Service Delivery and Human Resource Management — guided by functional financial, personnel, editorial, governance, volunteers and appraisal policies.
         </p>
 
-        <div class="space-y-4 mb-10">
-          <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-pink-500 flex items-center justify-center flex-shrink-0"><i class="fas fa-user-graduate text-white"></i></div>
+        <div class="space-y-5 mb-10">
+          <div class="flex items-start space-x-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-brand-200 transition-colors shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-navy-500 flex items-center justify-center flex-shrink-0"><i class="fas fa-bullseye text-white"></i></div>
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm">Scholarships for Girls</h4>
-              <p class="text-gray-600 text-xs mt-0.5">Full tuition, materials, uniforms and requirements.</p>
+              <h4 class="font-extrabold text-gray-900 text-lg">Our Mission</h4>
+              <p class="text-gray-600 mt-1 text-sm leading-relaxed">Empowering communities and Local Governments in South Sudan through Education, Health, Resilience and Recovery, Governance, Protection and media Programs for a sustainable future.</p>
             </div>
           </div>
-          <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-navy-500 flex items-center justify-center flex-shrink-0"><i class="fas fa-chalkboard-user text-white"></i></div>
+          <div class="flex items-start space-x-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-brand-200 transition-colors shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-brand-500 flex items-center justify-center flex-shrink-0"><i class="fas fa-eye text-white"></i></div>
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm">Women Role Models</h4>
-              <p class="text-gray-600 text-xs mt-0.5">Inspiring girls through direct conversations and mentorship.</p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
-            <div class="w-11 h-11 rounded-xl bg-gold-400 flex items-center justify-center flex-shrink-0"><i class="fas fa-futbol text-surface-900"></i></div>
-            <div>
-              <h4 class="font-extrabold text-gray-900 text-sm">"Sports for Girls" Programs</h4>
-              <p class="text-gray-600 text-xs mt-0.5">Building confidence, health and leadership through sport.</p>
+              <h4 class="font-extrabold text-gray-900 text-lg">Our Vision</h4>
+              <p class="text-gray-600 mt-1 text-sm leading-relaxed">MSA envisions literate, healthy and well informed communities in South Sudan.</p>
             </div>
           </div>
         </div>
 
-        <a href="#support" class="btn-primary px-8 py-4 rounded-2xl font-bold inline-flex items-center">
-          <span>Sponsor a Girl Today</span><i class="fas fa-arrow-right ml-3"></i>
-        </a>
+        <div class="relative pl-6 border-l-4 border-gold-400 py-2">
+          <p class="text-gray-700 italic font-display text-lg">"To be professional in our actions, at all times, to our clients, partners and each other."</p>
+          <p class="text-gray-500 text-sm mt-2 font-semibold">— MSA Guiding Principle</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ SCHOOLS WE MANAGE ═══════════════ -->
-<section class="py-24 bg-white relative overflow-hidden">
+<!-- ═══════════════ CORE VALUES ═══════════════ -->
+<section id="values" class="py-28 bg-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-brand-50 text-brand-600 mb-6"><i class="fas fa-building-columns mr-2"></i>Schools We Manage</span>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">
-        Places of <span class="text-gradient-green">Learning</span>
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg">MSA's schools serve displaced and host communities — giving children a place to learn, grow and hope.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-
-      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden" data-anim="fadeInUp">
-        <div class="relative h-72 img-zoom">
-          <img src="assets/msa12.png" alt="Maridi High School" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/70 to-transparent"></div>
-          <span class="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-white/95 text-navy-600 text-xs font-extrabold uppercase tracking-wide">Secondary School</span>
-        </div>
-        <div class="p-7">
-          <h3 class="text-2xl font-display font-extrabold text-gray-900 mb-3">Maridi High School</h3>
-          <p class="text-gray-600 leading-relaxed mb-5 text-sm">
-            A mixed secondary school established and managed by MSA in Maridi County. It offers education to youth from across the county — boys and girls learning side by side — with a strong focus on academic excellence and character formation.
-          </p>
-          <div class="grid grid-cols-3 gap-3 pt-5 border-t border-gray-100">
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600 counter-value" data-target="1">0</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">Secondary School</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600">Mixed</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">Boys &amp; Girls</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600">Maridi</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">County</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden" data-anim="fadeInUp" style="animation-delay:.1s">
-        <div class="relative h-72 img-zoom">
-          <img src="assets/msa2.jpeg" alt="Community Nursery Schools" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
-          <span class="absolute top-5 left-5 px-3 py-1.5 rounded-full bg-white/95 text-brand-600 text-xs font-extrabold uppercase tracking-wide">Nursery Schools</span>
-        </div>
-        <div class="p-7">
-          <h3 class="text-2xl font-display font-extrabold text-gray-900 mb-3">Community Nursery Schools</h3>
-          <p class="text-gray-600 leading-relaxed mb-5 text-sm">
-            Three community nursery schools established by MSA in areas where IDPs have densely settled. These schools help children of the displaced and host communities to get educated and have hope for the future.
-          </p>
-          <div class="grid grid-cols-3 gap-3 pt-5 border-t border-gray-100">
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600 counter-value" data-target="3">0</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">Nursery Schools</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600">IDPs</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">Focused</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-brand-600">Early</p>
-              <p class="text-gray-500 text-xs mt-0.5 font-semibold">Childhood</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ EDUCATION GALLERY ═══════════════ -->
-<section class="py-24 mesh-bg-2 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Header -->
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-gold-100 text-yellow-700 mb-6">
-        <i class="fas fa-images mr-2"></i>Gallery
-      </span>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">
-        Moments of <span class="text-gradient-green">Learning</span>
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-        Snapshots from MSA's education programs — classrooms, campaigns, and the everyday moments that build a literate South Sudan.
-      </p>
-    </div>
-
-    <!-- Bento Gallery Grid -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 auto-rows-[180px] sm:auto-rows-[220px] lg:auto-rows-[240px]">
-
-      <!-- 1 — Large hero (spans 2 cols, 2 rows) -->
-      <figure class="hidden-anim group relative col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-lg cursor-pointer" data-anim="fadeInUp">
-        <img src="assets/msa12.png"
-             alt="Students learning at Maridi High School"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-        <span class="absolute top-5 left-5 inline-flex items-center px-3 py-1.5 rounded-full bg-gold-400 text-surface-900 text-[10px] sm:text-xs font-extrabold tracking-wide uppercase">
-          <i class="fas fa-star mr-1.5"></i>Featured
-        </span>
-
-        <figcaption class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-          <div class="flex items-end justify-between gap-4">
-            <div>
-              <p class="text-gold-300 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2">Maridi High School</p>
-              <h3 class="text-white font-display font-extrabold text-xl sm:text-2xl leading-tight">Classrooms full of hope</h3>
-              <p class="text-white/70 text-xs sm:text-sm mt-2 max-w-md hidden sm:block">Every seat filled is a future rewritten — one lesson at a time.</p>
-            </div>
-            <div class="w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-gold-400 transition-colors">
-              <i class="fas fa-expand text-white group-hover:text-surface-900 transition-colors"></i>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-
-      <!-- 2 — Top right -->
-      <figure class="hidden-anim group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer" data-anim="fadeInUp" style="animation-delay:.08s">
-        <img src="assets/msa2.jpeg"
-             alt="Community Nursery School children"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-
-        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-brand-500/95 backdrop-blur-sm text-white text-[10px] font-extrabold tracking-wide uppercase">
-          Nursery
-        </span>
-
-        <figcaption class="absolute bottom-0 left-0 right-0 p-5">
-          <h3 class="text-white font-extrabold text-base leading-tight">Early beginnings</h3>
-          <p class="text-white/70 text-xs mt-1">Community Nursery Schools</p>
-        </figcaption>
-      </figure>
-
-      <!-- 3 — Top right 2 -->
-      <figure class="hidden-anim group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer" data-anim="fadeInUp" style="animation-delay:.16s">
-        <img src="assets/msa3.jpeg"
-             alt="Girl child education awareness"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-
-        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-pink-500/95 backdrop-blur-sm text-white text-[10px] font-extrabold tracking-wide uppercase">
-          Girls
-        </span>
-
-        <figcaption class="absolute bottom-0 left-0 right-0 p-5">
-          <h3 class="text-white font-extrabold text-base leading-tight">Girls Decide Today</h3>
-          <p class="text-white/70 text-xs mt-1">Save Your Future campaign</p>
-        </figcaption>
-      </figure>
-
-      <!-- 4 — Bottom row (spans 1 col) -->
-      <figure class="hidden-anim group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer" data-anim="fadeInUp" style="animation-delay:.24s">
-        <img src="assets/msa4.jpeg"
-             alt="Learning materials distribution"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-
-        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-navy-500/95 backdrop-blur-sm text-white text-[10px] font-extrabold tracking-wide uppercase">
-          Materials
-        </span>
-
-        <figcaption class="absolute bottom-0 left-0 right-0 p-5">
-          <h3 class="text-white font-extrabold text-base leading-tight">Tools for learning</h3>
-          <p class="text-white/70 text-xs mt-1">Books, desks &amp; supplies</p>
-        </figcaption>
-      </figure>
-
-      <!-- 5 — Bottom row (spans 1 col) -->
-      <figure class="hidden-anim group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer" data-anim="fadeInUp" style="animation-delay:.32s">
-        <img src="assets/msa6..jpeg"
-             alt="Teacher training session"
-             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-
-        <span class="absolute top-4 left-4 inline-flex items-center px-2.5 py-1 rounded-full bg-gold-400 text-surface-900 text-[10px] font-extrabold tracking-wide uppercase">
-          Teachers
-        </span>
-
-        <figcaption class="absolute bottom-0 left-0 right-0 p-5">
-          <h3 class="text-white font-extrabold text-base leading-tight">Empowering educators</h3>
-          <p class="text-white/70 text-xs mt-1">Capacity building for teachers &amp; PTAs</p>
-        </figcaption>
-      </figure>
-
-    </div>
-
-    <!-- Footer note / CTA -->
-    <div class="text-center mt-14 hidden-anim" data-anim="fadeInUp">
-      <p class="text-gray-500 text-sm mb-6 max-w-xl mx-auto">
-        Every photograph tells a story of a child, a teacher, or a community choosing education.
-      </p>
-      <a href="#support" class="btn-primary px-8 py-4 rounded-2xl font-bold inline-flex items-center">
-        <span>Support a Classroom</span>
-        <i class="fas fa-arrow-right ml-3"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════ OUR APPROACH — STEPS ═══════════════ -->
-<section class="py-24 mesh-bg-dark relative overflow-hidden noise-overlay">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-white/10 text-gold-400 mb-6"><i class="fas fa-route mr-2"></i>Our Approach</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-4">How We Deliver Education</h2>
-      <p class="text-white/60 max-w-2xl mx-auto">A four-step approach that ensures every intervention creates lasting change.</p>
+    <div class="text-center mb-16 hidden-anim" data-anim="fadeInUp">
+      <span class="section-badge bg-gold-100 text-yellow-700 mb-6"><i class="fas fa-heart mr-2"></i>Core Values</span>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">Our <span class="text-gradient-green">Guiding Principles</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">The values that guide every action, decision and partnership at MSA.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <div class="hidden-anim glass rounded-2xl p-7 relative" data-anim="fadeInUp">
-        <div class="absolute -top-4 left-7 w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center font-extrabold text-white shadow-lg">1</div>
-        <div class="pt-3">
-          <h3 class="text-white font-extrabold text-lg mb-3 mt-4">Assess</h3>
-          <p class="text-white/60 text-sm leading-relaxed">We work with communities to understand the local education needs and barriers — especially for girls and displaced children.</p>
-        </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-50 flex items-center justify-center mb-5"><i class="fas fa-user-tie text-brand-500 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Professionalism</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Professional in our actions at all times, to our clients, partners and each other.</p>
       </div>
-
-      <div class="hidden-anim glass rounded-2xl p-7 relative" data-anim="fadeInUp" style="animation-delay:.08s">
-        <div class="absolute -top-4 left-7 w-10 h-10 rounded-xl bg-navy-500 flex items-center justify-center font-extrabold text-white shadow-lg">2</div>
-        <div class="pt-3">
-          <h3 class="text-white font-extrabold text-lg mb-3 mt-4">Establish</h3>
-          <p class="text-white/60 text-sm leading-relaxed">We establish and manage schools — secondary and nursery — in the places where they are needed most, including IDP settlements.</p>
-        </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.08s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-navy-50 flex items-center justify-center mb-5"><i class="fas fa-bolt text-navy-500 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Responsive</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">In-depth understanding of the changing needs of the communities we serve.</p>
       </div>
-
-      <div class="hidden-anim glass rounded-2xl p-7 relative" data-anim="fadeInUp" style="animation-delay:.16s">
-        <div class="absolute -top-4 left-7 w-10 h-10 rounded-xl bg-gold-400 flex items-center justify-center font-extrabold text-surface-900 shadow-lg">3</div>
-        <div class="pt-3">
-          <h3 class="text-white font-extrabold text-lg mb-3 mt-4">Support</h3>
-          <p class="text-white/60 text-sm leading-relaxed">We provide scholarships, distribute learning materials, and build teacher and PTA capacity — sustaining quality for the long term.</p>
-        </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.16s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gold-100 flex items-center justify-center mb-5"><i class="fas fa-handshake text-yellow-600 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Respectful</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Non-discriminatory services and solutions for the benefit of all people.</p>
       </div>
-
-      <div class="hidden-anim glass rounded-2xl p-7 relative" data-anim="fadeInUp" style="animation-delay:.24s">
-        <div class="absolute -top-4 left-7 w-10 h-10 rounded-xl bg-red-500 flex items-center justify-center font-extrabold text-white shadow-lg">4</div>
-        <div class="pt-3">
-          <h3 class="text-white font-extrabold text-lg mb-3 mt-4">Advocate</h3>
-          <p class="text-white/60 text-sm leading-relaxed">We use radio, community campaigns and role models to promote girls' education and change the attitudes that keep girls out of school.</p>
-        </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.24s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-red-50 flex items-center justify-center mb-5"><i class="fas fa-user-check text-red-500 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Individualised Support</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Understanding individual needs and creating support that is right for their development.</p>
+      </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.32s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-purple-50 flex items-center justify-center mb-5"><i class="fas fa-globe text-purple-500 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Diversity</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Honouring the choices of people from diverse backgrounds.</p>
+      </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.4s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-50 flex items-center justify-center mb-5"><i class="fas fa-clipboard-check text-cyan-600 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Accountability</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Highest level of integrity in administrative, service and outreach activities.</p>
+      </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.48s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-indigo-50 flex items-center justify-center mb-5"><i class="fas fa-rocket text-indigo-500 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Modern Approach</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Excellent, high quality, state-of-the-art approaches for all communities.</p>
+      </div>
+      <div class="hidden-anim card-modern bg-white rounded-2xl p-7 text-center" data-anim="fadeInUp" style="animation-delay:.56s">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 flex items-center justify-center mb-5"><i class="fas fa-people-arrows text-emerald-600 text-xl"></i></div>
+        <h3 class="font-extrabold text-gray-900 mb-2">Partnerships</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Working with a wide variety of partners and advocating for quality service provision.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-14">
+<!-- ═══════════════ IMPACT STATS ═══════════════ -->
+<section id="impact" class="py-20 mesh-bg-dark relative overflow-hidden noise-overlay">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
+      <span class="section-badge bg-white/10 text-gold-400 mb-6"><i class="fas fa-chart-line mr-2"></i>Our Impact</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white mb-4">Making a Difference Across South Sudan</h2>
+      <p class="text-white/60 max-w-2xl mx-auto">Measurable results from over two decades of community service and partnership.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
       <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-brand-500/20 flex items-center justify-center mb-3"><i class="fas fa-school text-brand-400 text-lg"></i></div>
+        <div class="w-12 h-12 mx-auto rounded-xl bg-brand-500/20 flex items-center justify-center mb-3"><i class="fas fa-calendar-alt text-brand-400 text-lg"></i></div>
+        <div class="text-3xl font-extrabold text-white counter-value" data-target="15">0</div>
+        <div class="text-white/50 text-xs mt-1.5 font-semibold">Years of Existence</div>
+      </div>
+      <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.08s">
+        <div class="w-12 h-12 mx-auto rounded-xl bg-navy-500/20 flex items-center justify-center mb-3"><i class="fas fa-school text-blue-400 text-lg"></i></div>
         <div class="text-3xl font-extrabold text-white counter-value" data-target="4">0</div>
         <div class="text-white/50 text-xs mt-1.5 font-semibold">Schools Established</div>
       </div>
-      <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.08s">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-pink-500/20 flex items-center justify-center mb-3"><i class="fas fa-user-graduate text-pink-400 text-lg"></i></div>
-        <div class="text-3xl font-extrabold text-white counter-value" data-target="50">0</div>
-        <div class="text-white/50 text-xs mt-1.5 font-semibold">Girls Sponsored</div>
-      </div>
       <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.16s">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-gold-400/20 flex items-center justify-center mb-3"><i class="fas fa-calendar-check text-gold-400 text-lg"></i></div>
-        <div class="text-3xl font-extrabold text-white">4 Yrs</div>
-        <div class="text-white/50 text-xs mt-1.5 font-semibold">Scholarship Cycle</div>
+        <div class="w-12 h-12 mx-auto rounded-xl bg-gold-400/20 flex items-center justify-center mb-3"><i class="fas fa-tower-broadcast text-gold-400 text-lg"></i></div>
+        <div class="text-3xl font-extrabold text-white">88.9</div>
+        <div class="text-white/50 text-xs mt-1.5 font-semibold">Maridi FM Radio</div>
       </div>
       <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.24s">
-        <div class="w-12 h-12 mx-auto rounded-xl bg-navy-500/20 flex items-center justify-center mb-3"><i class="fas fa-chalkboard-user text-blue-400 text-lg"></i></div>
-        <div class="text-3xl font-extrabold text-white">PTA</div>
-        <div class="text-white/50 text-xs mt-1.5 font-semibold">Capacity Building</div>
+        <div class="w-12 h-12 mx-auto rounded-xl bg-red-500/20 flex items-center justify-center mb-3"><i class="fas fa-headphones text-red-400 text-lg"></i></div>
+        <div class="text-3xl font-extrabold text-white counter-value" data-target="20000">0</div>
+        <div class="text-white/50 text-xs mt-1.5 font-semibold">Radio Listeners</div>
+      </div>
+      <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.32s">
+        <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/20 flex items-center justify-center mb-3"><i class="fas fa-shield-halved text-purple-400 text-lg"></i></div>
+        <div class="text-3xl font-extrabold text-white counter-value" data-target="20">0</div>
+        <div class="text-white/50 text-xs mt-1.5 font-semibold">GBV Cases / Month</div>
+      </div>
+      <div class="hidden-anim stat-card rounded-2xl p-6 text-center" data-anim="scaleIn" style="animation-delay:.4s">
+        <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 flex items-center justify-center mb-3"><i class="fas fa-children text-emerald-400 text-lg"></i></div>
+        <div class="text-3xl font-extrabold text-white counter-value" data-target="17">0</div>
+        <div class="text-white/50 text-xs mt-1.5 font-semibold">Children Reunified</div>
+      </div>
+    </div>
+
+    <!-- Beneficiaries -->
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="hidden-anim glass rounded-2xl p-7" data-anim="fadeInLeft">
+        <h3 class="text-white font-extrabold text-lg mb-4 flex items-center"><i class="fas fa-users text-gold-400 mr-3"></i>Direct Beneficiaries</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Women</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Children</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Youth (In &amp; Out of School)</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">School Girls</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Local Authorities</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Community Leaders</span>
+        </div>
+      </div>
+      <div class="hidden-anim glass rounded-2xl p-7" data-anim="fadeInRight">
+        <h3 class="text-white font-extrabold text-lg mb-4 flex items-center"><i class="fas fa-share-nodes text-gold-400 mr-3"></i>Indirect Beneficiaries</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">CSO Employees</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Partner Organisations</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Wider Community</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/10 text-white/80 text-xs font-semibold border border-white/10">Host Communities</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ TESTIMONIALS / VOICES ═══════════════ -->
-<section class="py-24 bg-white relative overflow-hidden">
+<!-- ═══════════════ PROGRAMS ═══════════════ -->
+<section id="programs" class="py-28 bg-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-gold-100 text-yellow-700 mb-6"><i class="fas fa-quote-left mr-2"></i>Voices</span>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">
-        Stories from <span class="text-gradient-green">Our Community</span>
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg">What education means to the people MSA serves.</p>
+    <div class="text-center mb-16 hidden-anim" data-anim="fadeInUp">
+      <span class="section-badge bg-brand-50 text-brand-600 mb-6"><i class="fas fa-cogs mr-2"></i>What We Do</span>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">Our <span class="text-gradient-green">Programs</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">Comprehensive initiatives designed to uplift communities and build a stronger, more united South Sudan.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="hidden-anim bg-gradient-to-br from-brand-50 to-white rounded-3xl p-7 border border-brand-100 relative" data-anim="fadeInUp">
-        <i class="fas fa-quote-left text-brand-200 text-4xl absolute top-5 right-5"></i>
-        <p class="text-gray-700 leading-relaxed mb-5 relative">"Before MSA came to our community, many of us girls had no hope of continuing school. Now I am in Senior Three and I know I will finish."</p>
-        <div class="flex items-center space-x-3 pt-5 border-t border-brand-100">
-          <div class="w-11 h-11 rounded-full bg-brand-500 flex items-center justify-center"><i class="fas fa-user-graduate text-white"></i></div>
-          <div>
-            <p class="font-extrabold text-gray-900 text-sm">MSA Sponsored Scholar</p>
-            <p class="text-gray-500 text-xs">Maridi High School</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Education -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa4.jpeg" alt="Education program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-navy-600 text-xs font-extrabold uppercase tracking-wide">Flagship</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-graduation-cap text-white text-3xl drop-shadow-lg"></i>
           </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Education</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Capacity building for teachers and PTAs, establishment and management of schools, distribution of educational materials, sponsorships and promotion of female child education.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>1 Secondary &amp; 3 Nursery Schools</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Girls' Scholarships (4 years)</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Teacher &amp; PTA Training</li>
+          </ul>
+          <a href="education.html" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
       </div>
 
-      <div class="hidden-anim bg-gradient-to-br from-navy-50 to-white rounded-3xl p-7 border border-navy-100 relative" data-anim="fadeInUp" style="animation-delay:.1s">
-        <i class="fas fa-quote-left text-navy-200 text-4xl absolute top-5 right-5"></i>
-        <p class="text-gray-700 leading-relaxed mb-5 relative">"The teacher training changed how I teach. My students are more engaged, and the results are visible. MSA invested in us as professionals."</p>
-        <div class="flex items-center space-x-3 pt-5 border-t border-navy-100">
-          <div class="w-11 h-11 rounded-full bg-navy-500 flex items-center justify-center"><i class="fas fa-chalkboard-user text-white"></i></div>
-          <div>
-            <p class="font-extrabold text-gray-900 text-sm">Teacher</p>
-            <p class="text-gray-500 text-xs">Community Nursery School</p>
+      <!-- Health -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp" style="animation-delay:.08s">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa10.jpeg" alt="Health program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-red-900/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-red-600 text-xs font-extrabold uppercase tracking-wide">Essential</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-heartbeat text-white text-3xl drop-shadow-lg"></i>
           </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Health</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Primary Health Care services, Sexual Reproductive Health, Nutritional Programs and comprehensive HIV/AIDS programs including VCT services since 2013.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Youth-Friendly VCT Centre</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>HIV/AIDS Awareness Clubs</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Condom Distribution &amp; SRH</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
       </div>
 
-      <div class="hidden-anim bg-gradient-to-br from-gold-50 to-white rounded-3xl p-7 border border-gold-200 relative" data-anim="fadeInUp" style="animation-delay:.2s">
-        <i class="fas fa-quote-left text-gold-300 text-4xl absolute top-5 right-5"></i>
-        <p class="text-gray-700 leading-relaxed mb-5 relative">"My daughter is the first girl in our family to go to secondary school. MSA's support has given our whole family hope."</p>
-        <div class="flex items-center space-x-3 pt-5 border-t border-gold-200">
-          <div class="w-11 h-11 rounded-full bg-gold-400 flex items-center justify-center"><i class="fas fa-user text-surface-900"></i></div>
-          <div>
-            <p class="font-extrabold text-gray-900 text-sm">Parent</p>
-            <p class="text-gray-500 text-xs">Maridi County</p>
+      <!-- Resilience -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp" style="animation-delay:.16s">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa1.jpeg" alt="Agriculture program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-green-700 text-xs font-extrabold uppercase tracking-wide">Growth</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-seedling text-white text-3xl drop-shadow-lg"></i>
           </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Resilience &amp; Recovery</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Food Security Programs, Economic Recovery Programs, and Skills/Vocational trainings for youth and women — including computer, tailoring, mechanics and driving skills.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Computer &amp; Technical Skills</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Women's Business Start-up Capital</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Youth Agriculture Support</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+
+      <!-- Governance -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp" style="animation-delay:.24s">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa11.jpeg" alt="Governance program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-blue-700 text-xs font-extrabold uppercase tracking-wide">Core</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-balance-scale text-white text-3xl drop-shadow-lg"></i>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Governance</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Democracy and democratization, Rule of Law, Peace Building and Community Security Programs — strengthening local governance and civic participation.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Rule of Law Promotion</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Peace Building Dialogues</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Community Security Programs</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+
+      <!-- Protection -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp" style="animation-delay:.32s">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa9.jpeg" alt="Protection program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-purple-700 text-xs font-extrabold uppercase tracking-wide">Priority</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-shield-halved text-white text-3xl drop-shadow-lg"></i>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Protection</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Child Protection — prevention, response, child-friendly services, coordination. Gender Program — GBV, legal systems, capacity building, psychosocial support.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Special Protection Unit (Police)</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Child Reunification &amp; Advocacy</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Psychosocial Support &amp; Counselling</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+
+      <!-- Media -->
+      <div class="hidden-anim card-modern bg-white rounded-3xl overflow-hidden group" data-anim="fadeInUp" style="animation-delay:.4s">
+        <div class="h-52 relative overflow-hidden img-zoom">
+          <img src="assets/msa8.jpeg" alt="Media program" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-gold-600/70 to-transparent"></div>
+          <div class="absolute top-4 left-4"><span class="px-3 py-1 rounded-full bg-white/95 text-yellow-700 text-xs font-extrabold uppercase tracking-wide">Unique</span></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <i class="fas fa-tower-broadcast text-white text-3xl drop-shadow-lg"></i>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-extrabold text-gray-900 mb-3">Information &amp; Media</h3>
+          <p class="text-gray-600 leading-relaxed mb-4 text-sm">Establishment of Community FM radios, strengthening capacity of media houses, publication and awareness — including Maridi FM 88.9, the only privately operated community radio in the state.</p>
+          <ul class="space-y-1.5 mb-5 text-sm text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Maridi FM 88.9 Community Radio</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Media House Capacity Strengthening</li>
+            <li class="flex items-center"><i class="fas fa-check text-brand-500 mr-2 text-xs"></i>Policy Advocacy &amp; Awareness</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center text-brand-600 font-bold text-sm group-hover:gap-2 transition-all">Learn more <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ SUPPORT / CTA ═══════════════ -->
-<section id="support" class="py-24 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-navy-800"></div>
-  <div class="absolute inset-0 opacity-25 pointer-events-none">
-    <div class="orb w-96 h-96 bg-gold-400/40 -top-24 -right-16"></div>
-    <div class="orb w-80 h-80 bg-navy-500/40 bottom-0 -left-16" style="animation-delay:6s"></div>
-  </div>
-  <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,.06) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+<!-- ═══════════════ FEATURED INITIATIVE ═══════════════ -->
+<section class="py-28 mesh-bg-2 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
 
+      <div class="hidden-anim order-2 lg:order-1" data-anim="fadeInLeft">
+        <span class="section-badge bg-gold-100 text-yellow-700 mb-6"><i class="fas fa-star mr-2"></i>Featured Initiative</span>
+        <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6 leading-tight">Promoting<br><span class="text-gradient-gold">Girl Child</span> Education</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          MSA carries out massive community education awareness programs to promote education in the areas of our operation. In 2018, we conducted an in-school awareness campaign using women role models to talk to girls about the importance of education and the dangers of early marriage and unwanted pregnancy — under the theme <em class="font-bold text-gray-800">"Girls Decide Today and Save Your Future."</em>
+        </p>
+
+        <div class="space-y-5 mb-10">
+          <div class="flex items-start space-x-4">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot"></div>
+              <div class="w-0.5 h-14 bg-brand-200 mt-2"></div>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900">In-School Awareness Campaigns</h4>
+              <p class="text-gray-600 text-sm mt-1">Women role models engage school girls on education, early marriage and pregnancy prevention.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot" style="background:#0033A0;box-shadow:0 0 0 3px #0033A0"></div>
+              <div class="w-0.5 h-14 bg-navy-200 mt-2"></div>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900">National Girls Education Day</h4>
+              <p class="text-gray-600 text-sm mt-1">MSA supports Government-led celebrations to amplify awareness on girls' education.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex flex-col items-center">
+              <div class="timeline-dot" style="background:#FFD100;box-shadow:0 0 0 3px #FFD100"></div>
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900">4-Year Scholarships for Girls</h4>
+              <p class="text-gray-600 text-sm mt-1">Full tuition, scholastic materials, uniforms and requirements — Senior One to Senior Four.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary px-8 py-4 rounded-2xl font-bold inline-flex items-center">
+          <span>Support a Girl's Education</span><i class="fas fa-arrow-right ml-3"></i>
+        </a>
+      </div>
+
+      <div class="hidden-anim order-1 lg:order-2 relative" data-anim="fadeInRight">
+        <div class="relative">
+          <div class="overflow-hidden rounded-3xl h-[540px] shadow-2xl img-zoom">
+            <img src="assets/msa3.jpeg" alt="Girls education in South Sudan" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-8">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-white font-extrabold text-lg">Girls Decide Today</p>
+                  <p class="text-white/70 text-sm">Save Your Future — MSA Campaign</p>
+                </div>
+                <div class="w-16 h-16 rounded-full border-4 border-gold-400 flex items-center justify-center">
+                  <i class="fas fa-female text-gold-400 text-xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-6 -left-6 w-20 h-20 rounded-2xl bg-gold-400/15 blur-xl"></div>
+          <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-brand-500/15 blur-xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ACHIEVEMENTS TIMELINE ═══════════════ -->
+<section class="py-28 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 hidden-anim" data-anim="fadeInUp">
+      <span class="section-badge bg-navy-50 text-navy-600 mb-6"><i class="fas fa-trophy mr-2"></i>Key Achievements</span>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">Our <span class="text-gradient-green">Track Record</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">Milestones from the last five years across our programme areas.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="hidden-anim bg-gradient-to-br from-brand-50 to-white rounded-3xl p-7 border border-brand-100" data-anim="fadeInUp">
+        <div class="w-12 h-12 rounded-xl bg-brand-500 flex items-center justify-center mb-5"><i class="fas fa-graduation-cap text-white"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">Education</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-brand-500 mr-2 mt-0.5 text-xs"></i>Established Maridi High School (mixed secondary)</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-brand-500 mr-2 mt-0.5 text-xs"></i>2 community Nursery Schools for IDPs</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-brand-500 mr-2 mt-0.5 text-xs"></i>Girls' scholarships (S1–S4)</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-brand-500 mr-2 mt-0.5 text-xs"></i>National Girls Education Day support</li>
+        </ul>
+      </div>
+
+      <div class="hidden-anim bg-gradient-to-br from-red-50 to-white rounded-3xl p-7 border border-red-100" data-anim="fadeInUp" style="animation-delay:.08s">
+        <div class="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center mb-5"><i class="fas fa-heartbeat text-white"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">HIV/AIDS &amp; SRH</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-2 mt-0.5 text-xs"></i>VCT services since 2013 (youth-friendly)</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-2 mt-0.5 text-xs"></i>School HIV/AIDS &amp; SRHR clubs</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-2 mt-0.5 text-xs"></i>Condom distribution at youth centres</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-2 mt-0.5 text-xs"></i>Referrals to ART clinic</li>
+        </ul>
+      </div>
+
+      <div class="hidden-anim bg-gradient-to-br from-purple-50 to-white rounded-3xl p-7 border border-purple-100" data-anim="fadeInUp" style="animation-delay:.16s">
+        <div class="w-12 h-12 rounded-xl bg-purple-500 flex items-center justify-center mb-5"><i class="fas fa-shield-halved text-white"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">Child Protection</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-2 mt-0.5 text-xs"></i>17 LRA abducted children reunified</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-2 mt-0.5 text-xs"></i>Trained child protection committees</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-2 mt-0.5 text-xs"></i>Police trained on Child Act 2008</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-2 mt-0.5 text-xs"></i>Pre-school for displaced children</li>
+        </ul>
+      </div>
+
+      <div class="hidden-anim bg-gradient-to-br from-pink-50 to-white rounded-3xl p-7 border border-pink-100" data-anim="fadeInUp" style="animation-delay:.24s">
+        <div class="w-12 h-12 rounded-xl bg-pink-500 flex items-center justify-center mb-5"><i class="fas fa-venus text-white"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">Gender &amp; GBV</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-pink-500 mr-2 mt-0.5 text-xs"></i>Special Protection Unit at Maridi Police</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-pink-500 mr-2 mt-0.5 text-xs"></i>~20 GBV cases supported monthly</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-pink-500 mr-2 mt-0.5 text-xs"></i>Radio awareness reaching 20,000+</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-pink-500 mr-2 mt-0.5 text-xs"></i>Advocacy for 1st class judge (2017)</li>
+        </ul>
+      </div>
+
+      <div class="hidden-anim bg-gradient-to-br from-green-50 to-white rounded-3xl p-7 border border-green-100" data-anim="fadeInUp" style="animation-delay:.32s">
+        <div class="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center mb-5"><i class="fas fa-hands-holding-child text-white"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">Livelihoods</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-0.5 text-xs"></i>Computer skills training for youth</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-0.5 text-xs"></i>Tailoring, mechanics &amp; driving</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-0.5 text-xs"></i>Women's business start-up capital</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-0.5 text-xs"></i>Youth agriculture &amp; sports programs</li>
+        </ul>
+      </div>
+
+      <div class="hidden-anim bg-gradient-to-br from-gold-50 to-white rounded-3xl p-7 border border-gold-200" data-anim="fadeInUp" style="animation-delay:.4s">
+        <div class="w-12 h-12 rounded-xl bg-gold-400 flex items-center justify-center mb-5"><i class="fas fa-tower-broadcast text-surface-900"></i></div>
+        <h3 class="text-lg font-extrabold text-gray-900 mb-3">Information &amp; Media</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-start"><i class="fas fa-check-circle text-yellow-600 mr-2 mt-0.5 text-xs"></i>Maridi FM 88.9 established</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-yellow-600 mr-2 mt-0.5 text-xs"></i>Only privately operated community radio</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-yellow-600 mr-2 mt-0.5 text-xs"></i>Policy advocacy &amp; sensitisation</li>
+          <li class="flex items-start"><i class="fas fa-check-circle text-yellow-600 mr-2 mt-0.5 text-xs"></i>Media house capacity strengthening</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ NEWS & MEDIA ═══════════════ -->
+<section id="news" class="py-28 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 ppf-reveal">
+      <span class="section-badge bg-navy-50 text-navy-600 mb-6"><i class="fas fa-newspaper mr-2"></i>News &amp; Media</span>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">Stories of <span class="text-gradient-green">Progress</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">Campaigns, press releases, media coverage and impact stories from across South Sudan.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap justify-center gap-2.5 mb-12 ppf-reveal" role="tablist" aria-label="Filter news by category">
+      <button type="button" class="ppf-news-tab is-active" data-filter="all" aria-pressed="true">All Stories</button>
+      <button type="button" class="ppf-news-tab" data-filter="education" aria-pressed="false">Education</button>
+      <button type="button" class="ppf-news-tab" data-filter="health" aria-pressed="false">Health</button>
+      <button type="button" class="ppf-news-tab" data-filter="protection" aria-pressed="false">Protection</button>
+      <button type="button" class="ppf-news-tab" data-filter="media" aria-pressed="false">Media</button>
+      <button type="button" class="ppf-news-tab" data-filter="notices" aria-pressed="false">Notices</button>
+    </div>
+
+    <!-- News grid -->
+    <div id="ppfNewsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <!-- LEAD STORY -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal md:col-span-2 bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid lg:grid-cols-5" data-category="education">
+        <div class="relative min-h-[280px] lg:min-h-full lg:col-span-2 img-zoom">
+          <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80&auto=format&fit=crop" alt="Girls education" class="w-full h-full object-cover absolute inset-0">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent"></div>
+          <span class="absolute top-5 left-5 inline-flex items-center px-3.5 py-1.5 rounded-full bg-gold-400 text-surface-900 text-[11px] font-extrabold tracking-wider"><i class="fas fa-star mr-1.5"></i>LEAD STORY</span>
+        </div>
+        <div class="lg:col-span-3 p-7 lg:p-9 flex flex-col justify-center">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4">
+            <span class="px-3 py-1 rounded-full bg-brand-500 text-white text-[11px] font-bold tracking-wide uppercase">Education</span>
+            <span class="text-xs text-gray-500 flex items-center"><i class="far fa-calendar mr-1.5"></i>July 17, 2026</span>
+            <span class="text-xs text-gray-500 flex items-center"><i class="far fa-clock mr-1.5"></i>6 min read</span>
+          </div>
+          <h3 class="text-2xl lg:text-[1.75rem] font-display font-extrabold text-gray-900 leading-[1.22] mb-4">
+            <a href="#" class="hover:text-brand-600 transition-colors">Girls Decide Today: MSA's Campaign Reaches 5,000 Students Across Maridi County</a>
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-6 ppf-clamp-3">
+            Using women role models to speak directly to school girls about the importance of education, the dangers of early marriage and unwanted pregnancy — under the theme "Girls Decide Today and Save Your Future."
+          </p>
+          <div class="flex items-center justify-between pt-5 border-t border-gray-100">
+            <div class="flex items-center space-x-2.5">
+              <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white text-[11px] font-bold">MT</div>
+              <div>
+                <p class="text-xs font-bold text-gray-800 leading-tight">MSA Media Team</p>
+                <p class="text-[11px] text-gray-400 leading-tight">Communications Desk</p>
+              </div>
+            </div>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-2 text-brand-600 font-bold text-sm">Read story <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Health -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="health">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80&auto=format&fit=crop" alt="Health" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-red-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-red-600/95 text-white text-[11px] font-bold tracking-wide uppercase">Health</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>July 10, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>3 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">Youth-Friendly VCT Centre Marks 10,000 HIV Tests Since 2013</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">MSA's VCT services provide counselling, testing and referrals to ART clinic for all positive clients.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Health Team</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Protection -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="protection">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80&auto=format&fit=crop" alt="Protection" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-purple-600/95 text-white text-[11px] font-bold tracking-wide uppercase">Protection</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>July 14, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>4 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">Special Protection Unit in Maridi Supports 20 GBV Cases Monthly</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">Renovated and equipped by MSA, the unit continues to provide critical support for GBV survivors.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Protection Team</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Media -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="media">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80&auto=format&fit=crop" alt="Media" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-yellow-700/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-yellow-600/95 text-white text-[11px] font-bold tracking-wide uppercase">Media</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>July 8, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>4 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">Maridi FM 88.9 Reaches 20,000+ Listeners with Community Awareness</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">The only privately operated community FM radio in the state continues to amplify advocacy and sensitisation.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Media Team</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Education -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="education">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80&auto=format&fit=crop" alt="Education" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-600/95 text-white text-[11px] font-bold tracking-wide uppercase">Education</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>July 4, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>2 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">MSA Sponsors 50 Girls in Secondary Schools for 2026 Academic Year</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">Full tuition, scholastic materials and uniforms for the 4-year scholarship programme.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Education Team</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Notices -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="notices">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80&auto=format&fit=crop" alt="Notice" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold-400 text-surface-900 text-[11px] font-bold tracking-wide uppercase">Notice</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>June 30, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>2 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">Call for Volunteer Applications: Education &amp; Media Programs</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">Applications open to South Sudanese youth aged 18–35 until 15 August 2026.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">MSA Office</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Health 2 -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="health">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80&auto=format&fit=crop" alt="Health" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-red-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-red-600/95 text-white text-[11px] font-bold tracking-wide uppercase">Health</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>June 26, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>3 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">HIV/AIDS Awareness Clubs Formed in 12 Schools Across Maridi</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">Trained students lead peer education programs to reduce new infection rates and stigma.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Health Team</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Notices 2 -->
+      <article class="ppf-news-item ppf-news-card ppf-reveal bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100" data-category="notices">
+        <div class="h-48 relative img-zoom">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop" alt="Notice" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+          <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold-400 text-surface-900 text-[11px] font-bold tracking-wide uppercase">Notice</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2.5 text-[11px] text-gray-500 mb-3">
+            <span><i class="far fa-calendar mr-1.5"></i>June 24, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+            <span><i class="far fa-clock mr-1.5"></i>1 min read</span>
+          </div>
+          <h3 class="font-extrabold text-[17px] text-gray-900 leading-snug mb-2.5 ppf-clamp-2">
+            <a href="#" class="hover:text-brand-600 transition-colors">Notice: MSA Head Office Maridi — Holiday Closure</a>
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4 ppf-clamp-2">The Maridi head office and Juba/Yei offices will be closed from 6–9 July for scheduled maintenance.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-[11px] text-gray-500 font-semibold">Administration</span>
+            <a href="#" class="ppf-readmore inline-flex items-center gap-1.5 text-brand-600 text-sm font-bold">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div id="ppfNewsEmpty" class="hidden text-center py-16">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-gray-100 flex items-center justify-center mb-4"><i class="fas fa-newspaper text-gray-400 text-xl"></i></div>
+      <p class="text-gray-500 font-semibold">No stories in this category yet.</p>
+      <p class="text-gray-400 text-sm mt-1">Check back soon — we publish regularly.</p>
+    </div>
+
+    <div class="text-center mt-12 ppf-reveal">
+      <a href="#" class="inline-flex items-center px-8 py-4 rounded-2xl border-2 border-gray-200 text-gray-700 font-bold hover:border-brand-500 hover:text-brand-500 transition-all">
+        View All News <i class="fas fa-arrow-right ml-3"></i>
+      </a>
+    </div>
+
+    <!-- PRESS RELEASES -->
+    <div class="mt-28 ppf-reveal">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-10">
+        <div>
+          <span class="section-badge bg-gold-100 text-yellow-700 mb-4"><i class="fas fa-file-lines mr-2"></i>Official Statements</span>
+          <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-gray-900">Press Releases</h3>
+          <p class="text-gray-600 mt-2">Formal statements issued by MSA's Secretariat.</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-surface-900 via-navy-800 to-surface-900 rounded-3xl p-7 lg:p-10 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+          <div class="orb w-80 h-80 bg-brand-500/30 -top-24 -right-16"></div>
+          <div class="orb w-64 h-64 bg-gold-400/20 bottom-0 left-10" style="animation-delay:5s"></div>
+        </div>
+
+        <div class="relative grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="ppf-press glass rounded-2xl p-6 flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-gold-400/20 text-gold-400 text-[10px] font-extrabold tracking-widest uppercase">For Immediate Release</span>
+              <i class="fas fa-file-pdf text-white/30"></i>
+            </div>
+            <h4 class="text-white font-bold text-[15px] leading-snug mb-3 flex-grow">MSA Welcomes Partnership with Oxfam Novib to Strengthen Organisational Capacity</h4>
+            <p class="text-white/50 text-xs leading-relaxed mb-5 ppf-clamp-2">Acknowledging support in financial, governance, management and service delivery capacity building.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <span class="text-white/40 text-[11px]"><i class="far fa-calendar mr-1.5"></i>July 10, 2026</span>
+              <a href="#" class="inline-flex items-center text-gold-400 text-xs font-bold hover:text-gold-300 transition-colors"><i class="fas fa-download mr-1.5"></i> PDF</a>
+            </div>
+          </article>
+
+          <article class="ppf-press glass rounded-2xl p-6 flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-gold-400/20 text-gold-400 text-[10px] font-extrabold tracking-widest uppercase">For Immediate Release</span>
+              <i class="fas fa-file-pdf text-white/30"></i>
+            </div>
+            <h4 class="text-white font-bold text-[15px] leading-snug mb-3 flex-grow">Statement on the Launch of Maridi FM 88.9 Community Radio</h4>
+            <p class="text-white/50 text-xs leading-relaxed mb-5 ppf-clamp-2">The only privately operated community FM radio in the state, reaching over 20,000 listeners.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <span class="text-white/40 text-[11px]"><i class="far fa-calendar mr-1.5"></i>July 8, 2026</span>
+              <a href="#" class="inline-flex items-center text-gold-400 text-xs font-bold hover:text-gold-300 transition-colors"><i class="fas fa-download mr-1.5"></i> PDF</a>
+            </div>
+          </article>
+
+          <article class="ppf-press glass rounded-2xl p-6 flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-gold-400/20 text-gold-400 text-[10px] font-extrabold tracking-widest uppercase">For Immediate Release</span>
+              <i class="fas fa-file-pdf text-white/30"></i>
+            </div>
+            <h4 class="text-white font-bold text-[15px] leading-snug mb-3 flex-grow">MSA Calls for Strengthened Legal Systems to Fight GBV in South Sudan</h4>
+            <p class="text-white/50 text-xs leading-relaxed mb-5 ppf-clamp-2">Advocating for dedicated judges and capacity building for local authorities and community leaders.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+              <span class="text-white/40 text-[11px]"><i class="far fa-calendar mr-1.5"></i>June 28, 2026</span>
+              <a href="#" class="inline-flex items-center text-gold-400 text-xs font-bold hover:text-gold-300 transition-colors"><i class="fas fa-download mr-1.5"></i> PDF</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA MENTIONS -->
+    <div class="mt-24 ppf-reveal">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-10">
+        <div>
+          <span class="section-badge bg-navy-50 text-navy-600 mb-4"><i class="fas fa-tower-broadcast mr-2"></i>In The News</span>
+          <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-gray-900">MSA in the Media</h3>
+          <p class="text-gray-600 mt-2">Where our work has been covered by South Sudanese and regional outlets.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden divide-y divide-gray-200/70">
+        <a href="#" class="ppf-mention group flex items-center gap-5 p-5 sm:p-6">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-navy-500 to-navy-700 flex items-center justify-center flex-shrink-0 shadow-sm"><span class="text-white font-extrabold text-sm tracking-tight">SSBC</span></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors mb-1">MSA Launches Girls' Education Campaign in Maridi County</p>
+            <p class="text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-semibold">South Sudan Broadcasting Corporation</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span><i class="far fa-calendar mr-1.5"></i>July 17, 2026</span>
+            </p>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square ppf-ext text-gray-400 text-sm flex-shrink-0"></i>
+        </a>
+
+        <a href="#" class="ppf-mention group flex items-center gap-5 p-5 sm:p-6">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center flex-shrink-0 shadow-sm"><span class="text-white font-extrabold text-[10px] leading-tight text-center">RADIO<br>MIRAYA</span></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors mb-1">Maridi FM 88.9: A Community Radio Changing Lives</p>
+            <p class="text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-semibold">Radio Miraya</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span><i class="far fa-calendar mr-1.5"></i>July 15, 2026</span>
+            </p>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square ppf-ext text-gray-400 text-sm flex-shrink-0"></i>
+        </a>
+
+        <a href="#" class="ppf-mention group flex items-center gap-5 p-5 sm:p-6">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center flex-shrink-0 shadow-sm"><span class="text-white font-extrabold text-[10px] leading-tight text-center">EYE<br>RADIO</span></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors mb-1">MSA Calls for Youth Inclusion in Peace Building Processes</p>
+            <p class="text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-semibold">Eye Radio</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span><i class="far fa-calendar mr-1.5"></i>July 12, 2026</span>
+            </p>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square ppf-ext text-gray-400 text-sm flex-shrink-0"></i>
+        </a>
+
+        <a href="#" class="ppf-mention group flex items-center gap-5 p-5 sm:p-6">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-gold-400 to-yellow-600 flex items-center justify-center flex-shrink-0 shadow-sm"><span class="text-surface-900 font-extrabold text-[10px] leading-tight text-center">MARIDI<br>NEWS</span></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors mb-1">MSA Reunifies 17 Former LRA Abductees with Families</p>
+            <p class="text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-semibold">Maridi News Agency</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span><i class="far fa-calendar mr-1.5"></i>July 9, 2026</span>
+            </p>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square ppf-ext text-gray-400 text-sm flex-shrink-0"></i>
+        </a>
+
+        <a href="#" class="ppf-mention group flex items-center gap-5 p-5 sm:p-6">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-surface-800 to-surface-900 flex items-center justify-center flex-shrink-0 shadow-sm"><span class="text-white font-extrabold text-[10px] leading-tight text-center">JUBA<br>ECHO</span></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-gray-900 leading-snug group-hover:text-brand-600 transition-colors mb-1">MSA Expands Operations to Juba and Yei Counties</p>
+            <p class="text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span class="font-semibold">Juba Echo</span>
+              <span class="w-1 h-1 rounded-full bg-gray-300"></span>
+              <span><i class="far fa-calendar mr-1.5"></i>July 3, 2026</span>
+            </p>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square ppf-ext text-gray-400 text-sm flex-shrink-0"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="mt-20 ppf-reveal">
+      <div class="rounded-3xl bg-gradient-to-r from-brand-500 via-brand-600 to-navy-600 p-8 sm:p-10 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+          <div class="orb w-72 h-72 bg-gold-400/40 -top-20 -right-10"></div>
+        </div>
+        <div class="relative flex flex-col lg:flex-row items-center justify-between gap-7">
+          <div class="text-center lg:text-left">
+            <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white mb-2">Never miss an update</h3>
+            <p class="text-white/75">Get programme news, press releases and impact stories straight to your inbox.</p>
+          </div>
+          <form class="w-full lg:w-auto flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); this.reset(); this.querySelector('button').innerHTML='<i class=\'fas fa-check mr-2\'></i>Subscribed';">
+            <label for="msaNewsletterEmail" class="sr-only">Email address</label>
+            <input id="msaNewsletterEmail" type="email" required placeholder="you@example.com"
+                   class="w-full sm:w-72 px-5 py-3.5 rounded-xl bg-white/95 text-gray-900 placeholder-gray-400 outline-none focus:ring-4 focus:ring-white/30 transition-all">
+            <button type="submit" class="px-7 py-3.5 rounded-xl bg-surface-900 text-white font-bold hover:bg-black transition-colors whitespace-nowrap">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTNERS MARQUEE ═══════════════ -->
+<section class="py-16 bg-white border-t border-b border-gray-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <p class="text-center text-gray-400 text-sm font-bold uppercase tracking-wider">Our Partners &amp; Collaborators</p>
+  </div>
+  <div class="relative overflow-hidden">
+    <div class="flex marquee-track whitespace-nowrap">
+      <div class="flex items-center space-x-16 px-8">
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-hands-holding-circle text-xl"></i><span>Oxfam Novib</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-landmark text-xl"></i><span>Ministry of Education</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-shield-halved text-xl"></i><span>Maridi Police</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-broadcast-tower text-xl"></i><span>Maridi FM 88.9</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-hospital text-xl"></i><span>Maridi Hospital</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-school text-xl"></i><span>Maridi High School</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-users text-xl"></i><span>Community Leaders</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-globe text-xl"></i><span>International Donors</span></div>
+      </div>
+      <div class="flex items-center space-x-16 px-8" aria-hidden="true">
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-hands-holding-circle text-xl"></i><span>Oxfam Novib</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-landmark text-xl"></i><span>Ministry of Education</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-shield-halved text-xl"></i><span>Maridi Police</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-broadcast-tower text-xl"></i><span>Maridi FM 88.9</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-hospital text-xl"></i><span>Maridi Hospital</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-school text-xl"></i><span>Maridi High School</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-users text-xl"></i><span>Community Leaders</span></div>
+        <div class="flex items-center space-x-2 text-gray-400 font-bold text-lg"><i class="fas fa-globe text-xl"></i><span>International Donors</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="py-28 relative overflow-hidden">
+  <div class="hero-image-bg">
+    <div class="hero-overlay-photo" style="background-image:url('assets/msa4.jpeg');"></div>
+  </div>
+  <div class="absolute inset-0 bg-black/40"></div>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
     <div class="hidden-anim" data-anim="scaleIn">
-      <div class="w-20 h-20 mx-auto rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-7 shadow-2xl">
-        <i class="fas fa-graduation-cap text-gold-400 text-3xl"></i>
-      </div>
-      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6 leading-tight">
-        Help Us Build a Literate South Sudan
-      </h2>
-      <p class="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Sponsor a girl, support a school, or partner with us to strengthen education in communities that need it most. Every contribution creates lasting change.
-      </p>
+      <div class="w-20 h-20 mx-auto rounded-full bg-gold-400/25 backdrop-blur-sm flex items-center justify-center mb-8"><span class="text-4xl">🇸🇸</span></div>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-white mb-6 leading-tight">Become a Partner Today</h2>
+      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">Join us in building a literate, healthy and well-informed South Sudan. Together, we create lasting change.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="index.html#contact" class="px-8 py-4 rounded-2xl bg-white text-brand-700 font-bold text-base inline-flex items-center hover:bg-gold-400 hover:text-surface-900 transition-all shadow-lg hover:shadow-2xl">
-          <i class="fas fa-hand-holding-heart mr-3"></i><span>Sponsor a Girl</span>
-        </a>
-        <a href="index.html#contact" class="btn-outline px-8 py-4 rounded-2xl font-bold text-base inline-flex items-center">
-          <i class="fas fa-handshake mr-3"></i><span>Partner With Us</span>
-        </a>
+        <a href="#contact" class="btn-primary px-10 py-4 rounded-2xl font-bold text-lg inline-flex items-center"><i class="fas fa-hand-holding-heart mr-3"></i><span>Volunteer With Us</span></a>
+        <a href="#contact" class="btn-outline px-10 py-4 rounded-2xl font-bold text-lg inline-flex items-center"><i class="fas fa-donate mr-3"></i><span>Support Our Cause</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ OTHER PROGRAMS ═══════════════ -->
-<section class="py-24 bg-white relative overflow-hidden">
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact" class="py-28 bg-white relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14 hidden-anim" data-anim="fadeInUp">
-      <span class="section-badge bg-navy-50 text-navy-600 mb-6"><i class="fas fa-compass mr-2"></i>Explore More</span>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-gray-900 mb-5">
-        Other <span class="text-gradient-green">Programs</span>
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">MSA works across six sectors. Discover how we're transforming communities across South Sudan.</p>
+    <div class="text-center mb-16 hidden-anim" data-anim="fadeInUp">
+      <span class="section-badge bg-brand-50 text-brand-600 mb-6"><i class="fas fa-envelope mr-2"></i>Get In Touch</span>
+      <h2 class="text-4xl sm:text-5xl font-display font-extrabold text-gray-900 mb-6">Contact <span class="text-gradient-green">Us</span></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg">Ready to make a difference? Reach out and join the movement for a better South Sudan.</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-      <a href="index.html#programs" class="hidden-anim group bg-white rounded-2xl p-6 border border-gray-100 card-modern text-center" data-anim="fadeInUp">
-        <div class="w-14 h-14 mx-auto rounded-2xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-red-500 transition-colors">
-          <i class="fas fa-heartbeat text-red-500 group-hover:text-white text-xl transition-colors"></i>
-        </div>
-        <h3 class="font-extrabold text-gray-900 text-sm mb-1">Health</h3>
-        <p class="text-gray-500 text-xs">PHC, SRH, HIV/AIDS</p>
-      </a>
+    <div class="grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2 hidden-anim" data-anim="fadeInLeft">
+        <div class="bg-gradient-to-br from-surface-900 to-navy-800 rounded-3xl p-8 h-full text-white relative overflow-hidden">
+          <div class="absolute inset-0 opacity-20">
+            <div class="orb w-64 h-64 bg-brand-500/30 -top-10 -right-10"></div>
+            <div class="orb w-48 h-48 bg-gold-400/20 bottom-10 left-0" style="animation-delay:5s"></div>
+          </div>
+          <div class="relative">
+            <h3 class="text-2xl font-display font-extrabold mb-2">Let's Connect</h3>
+            <p class="text-white/60 mb-10">We'd love to hear from you. Reach out through any of these channels.</p>
 
-      <a href="index.html#programs" class="hidden-anim group bg-white rounded-2xl p-6 border border-gray-100 card-modern text-center" data-anim="fadeInUp" style="animation-delay:.08s">
-        <div class="w-14 h-14 mx-auto rounded-2xl bg-green-50 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors">
-          <i class="fas fa-seedling text-green-500 group-hover:text-white text-xl transition-colors"></i>
-        </div>
-        <h3 class="font-extrabold text-gray-900 text-sm mb-1">Resilience</h3>
-        <p class="text-gray-500 text-xs">Food &amp; economic recovery</p>
-      </a>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-map-marker-alt text-gold-400"></i></div>
+                <div>
+                  <h4 class="font-bold text-xs text-white/60 uppercase tracking-wider">Head Office</h4>
+                  <p class="text-white mt-1 text-sm">Maridi County, Western Equatoria State<br>South Sudan</p>
+                  <p class="text-white/50 text-xs mt-1">Other offices: Juba &amp; Yei, Central Equatoria State</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-phone text-gold-400"></i></div>
+                <div>
+                  <h4 class="font-bold text-xs text-white/60 uppercase tracking-wider">Phone</h4>
+                  <p class="text-white mt-1"><a href="tel:+211 925 784 075" class="hover:text-gold-400 transition-colors text-sm">+211 925 784 075</a></p>  
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-envelope text-gold-400"></i></div>
+                <div>
+                  <h4 class="font-bold text-xs text-white/60 uppercase tracking-wider">Email</h4>
+                  <p class="text-white mt-1 text-sm break-all"><a href="mailto:info@msasouthsudan.org" class="hover:text-gold-400 transition-colors">info@msasouthsudan.org</a></p>
+                </div>
+              </div>
+            </div>
 
-      <a href="index.html#programs" class="hidden-anim group bg-white rounded-2xl p-6 border border-gray-100 card-modern text-center" data-anim="fadeInUp" style="animation-delay:.16s">
-        <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-500 transition-colors">
-          <i class="fas fa-balance-scale text-blue-500 group-hover:text-white text-xl transition-colors"></i>
+            <div class="mt-10 pt-8 border-t border-white/10">
+              <p class="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">Follow Us</p>
+              <div class="flex space-x-3">
+                <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-facebook-f text-white"></i></a>
+                <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center hover:bg-pink-500 transition-colors"><i class="fab fa-instagram text-white"></i></a>
+                <a href="#" aria-label="X" class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center hover:bg-blue-400 transition-colors"><i class="fab fa-x-twitter text-white"></i></a>
+                <a href="#" aria-label="WhatsApp" class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center hover:bg-green-500 transition-colors"><i class="fab fa-whatsapp text-white"></i></a>
+                <a href="#" aria-label="YouTube" class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center hover:bg-red-500 transition-colors"><i class="fab fa-youtube text-white"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="font-extrabold text-gray-900 text-sm mb-1">Governance</h3>
-        <p class="text-gray-500 text-xs">Democracy &amp; rule of law</p>
-      </a>
+      </div>
 
-      <a href="index.html#programs" class="hidden-anim group bg-white rounded-2xl p-6 border border-gray-100 card-modern text-center" data-anim="fadeInUp" style="animation-delay:.24s">
-        <div class="w-14 h-14 mx-auto rounded-2xl bg-purple-50 flex items-center justify-center mb-4 group-hover:bg-purple-500 transition-colors">
-          <i class="fas fa-shield-halved text-purple-500 group-hover:text-white text-xl transition-colors"></i>
-        </div>
-        <h3 class="font-extrabold text-gray-900 text-sm mb-1">Protection</h3>
-        <p class="text-gray-500 text-xs">Child &amp; gender protection</p>
-      </a>
+      <div class="lg:col-span-3 hidden-anim" data-anim="fadeInRight">
+        <div class="bg-gray-50 rounded-3xl p-8 lg:p-10">
+          <h3 class="text-2xl font-display font-extrabold text-gray-900 mb-2">Send a Message</h3>
+          <p class="text-gray-500 mb-8">Fill out the form below and we'll get back to you shortly.</p>
 
-      <a href="index.html#programs" class="hidden-anim group bg-white rounded-2xl p-6 border border-gray-100 card-modern text-center" data-anim="fadeInUp" style="animation-delay:.32s">
-        <div class="w-14 h-14 mx-auto rounded-2xl bg-yellow-50 flex items-center justify-center mb-4 group-hover:bg-yellow-500 transition-colors">
-          <i class="fas fa-tower-broadcast text-yellow-600 group-hover:text-white text-xl transition-colors"></i>
+          <form id="contactForm" class="space-y-5" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="firstName" class="block text-sm font-bold text-gray-700 mb-2">First Name</label>
+                <input id="firstName" name="firstName" type="text" required autocomplete="given-name"
+                       class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all outline-none bg-white" placeholder="John">
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-bold text-gray-700 mb-2">Last Name</label>
+                <input id="lastName" name="lastName" type="text" required autocomplete="family-name"
+                       class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all outline-none bg-white" placeholder="Doe">
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
+              <input id="email" name="email" type="email" required autocomplete="email"
+                     class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all outline-none bg-white" placeholder="john@example.com">
+            </div>
+
+            <div>
+              <label for="interest" class="block text-sm font-bold text-gray-700 mb-2">I'm interested in</label>
+              <select id="interest" name="interest" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all outline-none bg-white text-gray-600">
+                <option>Volunteering</option>
+                <option>Partnership</option>
+                <option>Donation</option>
+                <option>Education Programs</option>
+                <option>Health Programs</option>
+                <option>Protection &amp; GBV</option>
+                <option>Media &amp; Communications</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-bold text-gray-700 mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 transition-all outline-none bg-white resize-none" placeholder="Tell us how you'd like to contribute..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-base flex items-center justify-center">
+              <span>Send Message</span><i class="fas fa-paper-plane ml-3"></i>
+            </button>
+          </form>
+
+          <div id="formSuccess" class="hidden mt-6 p-5 rounded-2xl bg-brand-50 border border-brand-200 text-center" role="status" aria-live="polite">
+            <div class="w-12 h-12 mx-auto rounded-full bg-brand-500 flex items-center justify-center mb-3"><i class="fas fa-check text-white text-lg"></i></div>
+            <p class="font-bold text-brand-700">Message sent successfully!</p>
+            <p class="text-brand-600 text-sm mt-1">We'll get back to you soon.</p>
+          </div>
         </div>
-        <h3 class="font-extrabold text-gray-900 text-sm mb-1">Media</h3>
-        <p class="text-gray-500 text-xs">Community FM &amp; awareness</p>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -2240,22 +2255,6 @@ a.mm-footer-row:hover {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ═══════════════════════════════════════════════════════
-     READING PROGRESS BAR
-     ═══════════════════════════════════════════════════════ */
-  var progress = document.getElementById('readingProgress');
-  if (progress) {
-    var updateProgress = function () {
-      var h = document.documentElement;
-      var scrollTop = h.scrollTop || document.body.scrollTop;
-      var height = h.scrollHeight - h.clientHeight;
-      var pct = height > 0 ? scrollTop / height : 0;
-      progress.style.transform = 'scaleX(' + pct + ')';
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  }
-
-  /* ═══════════════════════════════════════════════════════
      SCROLL STATE (header + navbar)
      ═══════════════════════════════════════════════════════ */
   var header = document.getElementById('msaHeader');
@@ -2275,6 +2274,7 @@ a.mm-footer-row:hover {
   var menu    = document.getElementById('mobileMenu');
   var mmClose = document.getElementById('mobileMenuClose');
 
+  /* Open / close the mobile menu */
   function openMobileMenu() {
     if (!menu || !menuBtn) return;
     menu.classList.remove('hidden');
@@ -2309,6 +2309,7 @@ a.mm-footer-row:hover {
       else closeMobileMenu();
     });
 
+    /* Escape key closes menu */
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
         closeMobileMenu();
@@ -2316,6 +2317,7 @@ a.mm-footer-row:hover {
     });
   }
 
+  /* Close button inside the menu header */
   if (mmClose) {
     mmClose.addEventListener('click', closeMobileMenu);
   }
@@ -2328,6 +2330,7 @@ a.mm-footer-row:hover {
       var submenu = btn.nextElementSibling;
       var isOpen  = btn.classList.contains('mm-open');
 
+      /* Close all other open dropdowns */
       document.querySelectorAll('[data-mm-toggle].mm-open').forEach(function (other) {
         if (other !== btn) {
           other.classList.remove('mm-open');
@@ -2336,6 +2339,7 @@ a.mm-footer-row:hover {
         }
       });
 
+      /* Toggle this dropdown */
       btn.classList.toggle('mm-open', !isOpen);
       if (submenu) submenu.classList.toggle('mm-sub-open', !isOpen);
     });
@@ -2382,7 +2386,7 @@ a.mm-footer-row:hover {
       el.textContent = target.toLocaleString() + (target >= 100 ? '+' : '');
       return;
     }
-    var duration = 1800;
+    var duration = 2000;
     var start = performance.now();
     var tick = function (now) {
       var p = Math.min((now - start) / duration, 1);
@@ -2428,6 +2432,99 @@ a.mm-footer-row:hover {
     backToTop.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
     });
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     CONTACT FORM
+     ═══════════════════════════════════════════════════════ */
+  var contactForm  = document.getElementById('contactForm');
+  var formSuccess  = document.getElementById('formSuccess');
+  if (contactForm && formSuccess) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+      contactForm.style.display = 'none';
+      formSuccess.classList.remove('hidden');
+      if (formSuccess.focus) formSuccess.focus();
+      setTimeout(function () {
+        contactForm.style.display = 'block';
+        formSuccess.classList.add('hidden');
+        contactForm.reset();
+      }, 5000);
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     NEWS FILTER TABS
+     ═══════════════════════════════════════════════════════ */
+  var newsTabs  = Array.prototype.slice.call(document.querySelectorAll('.ppf-news-tab'));
+  var newsItems = Array.prototype.slice.call(document.querySelectorAll('.ppf-news-item'));
+  var newsEmpty = document.getElementById('ppfNewsEmpty');
+
+  if (newsTabs.length && newsItems.length) {
+    var applyNewsFilter = function (filter) {
+      var visible = 0;
+      newsItems.forEach(function (item, i) {
+        var match = filter === 'all' || item.dataset.category === filter;
+        item.classList.toggle('is-hidden', !match);
+        if (match) {
+          visible++;
+          item.classList.remove('is-in');
+          void item.offsetWidth;
+          item.style.animationDelay = prefersReduced ? '0s' : Math.min(i * 40, 320) + 'ms';
+          item.classList.add('is-in');
+        }
+      });
+      if (newsEmpty) newsEmpty.classList.toggle('hidden', visible > 0);
+    };
+
+    newsTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        newsTabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-pressed', String(active));
+        });
+        applyNewsFilter(tab.dataset.filter);
+      });
+    });
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     NEWS REVEAL ANIMATIONS
+     ═══════════════════════════════════════════════════════ */
+  var newsReveals = Array.prototype.slice.call(
+    document.querySelectorAll('#news .ppf-reveal:not(.ppf-news-item)')
+  );
+  if (newsReveals.length || newsItems.length) {
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      newsReveals.forEach(function (el) { el.classList.add('is-in'); });
+      newsItems.forEach(function (el) { el.classList.add('is-in'); });
+    } else {
+      var newsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          newsObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      newsReveals.forEach(function (el) { newsObserver.observe(el); });
+
+      var cardObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var siblings = Array.prototype.slice.call(entry.target.parentElement.children);
+          var idx = siblings.indexOf(entry.target);
+          entry.target.style.animationDelay = Math.min(idx * 70, 420) + 'ms';
+          entry.target.classList.add('is-in');
+          cardObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      newsItems.forEach(function (el) { cardObserver.observe(el); });
+    }
   }
 
   /* ═══════════════════════════════════════════════════════
